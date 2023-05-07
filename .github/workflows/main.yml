@@ -7,7 +7,7 @@ jobs:
       MY_SECRET   : ${{secrets.commit_secret}}
       USER_NAME   : canyi-chen
       USER_EMAIL  : cychen.stats@outlook.com
-      PUBLISH_DIR : ./dist
+      PUBLISH_DIR : dist
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
@@ -37,5 +37,5 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: ${{PUBLISH_DIR}} # The folder the action should deploy.
+          folder: dist # ${{PUBLISH_DIR}} # The folder the action should deploy.
           
