@@ -34,15 +34,8 @@ jobs:
         run: |
           mkdir $PUBLISH_DIR
           cp main.pdf $PUBLISH_DIR
-          cd $PUBLISH_DIR
-          git init
-          git config --local user.name $USER_NAME
-          git config --local user.email $USER_EMAIL
-          git status
-          git remote add origin https://$MY_SECRET@github.com/$GITHUB_REPOSITORY.git
-          git checkout -b gh-pages
-          git add main.pdf
-          git commit -m "deploy to Github pages"
-          git push origin gh-pages -f
-          echo 🤘 deploy gh-pages complete.
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: $PUBLISH_DIR # The folder the action should deploy.
           
