@@ -34,6 +34,7 @@ jobs:
         run: |
           mkdir $PUBLISH_DIR
           cp main.pdf $PUBLISH_DIR
+          cp index.html $PUBLISH_DIR
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
