@@ -5,8 +5,8 @@ jobs:
     permissions: write-all
     env:
       MY_SECRET   : ${{secrets.commit_secret}}
-      USER_NAME   : githubaction
-      USER_EMAIL  : githubaction@fake.com
+      USER_NAME   : canyi-chen
+      USER_EMAIL  : cychen.stats@outlook.com
       PUBLISH_DIR : ./dist
     runs-on: ubuntu-latest
     steps:
