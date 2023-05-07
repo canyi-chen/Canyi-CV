@@ -3,6 +3,11 @@ on: [push]
 jobs:
   build_latex:
     permissions: write-all
+    env:
+      MY_SECRET   : ${{secrets.commit_secret}}
+      USER_NAME   : githubaction
+      USER_EMAIL  : githubaction@fake.com
+      PUBLISH_DIR : ./dist
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
@@ -27,9 +32,9 @@ jobs:
           body: "Automatic release through Github Actions"
       - name: Commit files to gh-pages
         run: |
-          mkdir PUBLISH_DIR
-          cp main.pdf PUBLISH_DIR
-          cd PUBLISH_DIR
+          mkdir $PUBLISH_DIR
+          cp main.pdf $PUBLISH_DIR
+          cd $PUBLISH_DIR
           git init
           git config --local user.name $USER_NAME
           git config --local user.email $USER_EMAIL
