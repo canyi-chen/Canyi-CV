@@ -36,7 +36,7 @@ jobs:
           cp main.pdf $PUBLISH_DIR
           cp index.html $PUBLISH_DIR
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.1.4
+        uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           BRANCH: gh-pages
           folder: dist # ${{PUBLISH_DIR}} # The folder the action should deploy.
