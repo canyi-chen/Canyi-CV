@@ -30,12 +30,17 @@ jobs:
           tag: ${{ github.ref }}
           overwrite: true
           body: "Automatic release through Github Actions"
-      - name: Commit files to gh-pages
+          
+      - name: Post Processing
         run: |
           mkdir $PUBLISH_DIR
           cp main.pdf $PUBLISH_DIR
           cp index.html $PUBLISH_DIR
-      - name: Deploy 🚀
+          
+      - name: Git add
+        run: git add main.pdf
+        
+      - name: Deploy to Github Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           BRANCH: gh-pages
