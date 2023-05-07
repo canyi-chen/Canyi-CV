@@ -27,6 +27,9 @@ jobs:
           body: "Automatic release through Github Actions"
       - name: Commit files to gh-pages
         run: |
+          mkdir PUBLISH_DIR
+          cp main.pdf PUBLISH_DIR
+          cd PUBLISH_DIR
           git init
           git config --local user.name $USER_NAME
           git config --local user.email $USER_EMAIL
