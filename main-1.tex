@@ -1,0 +1,336 @@
+\documentclass[margin,line]{resume-bib}
+\usepackage{fancyhdr}
+
+
+\usepackage{xcolor}
+\newcommand{\updateinfo}[1][\today]{%\par\vfill\hfill%
+{%
+\scriptsize\color{gray}Last updated on #1}}
+
+
+
+
+\usepackage[hybrid]{markdown}
+\usepackage{graphicx} % includegraphics command is implemented here
+
+% \usepackage{natbib}
+% \usepackage{bibentry}
+\usepackage[%bibstyle=publist,
+backend=biber,style=nature,doi=true,maxbibnames=99,
+sorting=ydnt%https://tex.stackexchange.com/questions/51434/biblatex-citation-order
+]{biblatex}
+\addbibresource{ref.bib}
+%\usepackage{doi}
+
+
+
+\def\makenamesetup{%
+  \def\bibnamedelima{~}%
+  \def\bibnamedelimb{ }%
+  \def\bibnamedelimc{ }%
+  \def\bibnamedelimd{ }%
+  \def\bibnamedelimi{ }%
+  \def\bibinitperiod{.}%
+  \def\bibinitdelim{~}%
+  \def\bibinithyphendelim{.-}}    
+\newcommand*{\makename}[2]{\begingroup\makenamesetup\xdef#1{#2}\endgroup}
+
+\newcommand*{\boldname}[3]{%
+  \def\lastname{#1}%
+  \def\firstname{#2}%
+  \def\firstinit{#3}}
+\boldname{}{}{}
+
+% Patch new definitions
+\renewcommand{\mkbibnamegiven}[1]{%
+  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+  {\mkbibbold{#1}}{#1}%
+}
+
+\renewcommand{\mkbibnamefamily}[1]{%
+  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+  {\mkbibbold{#1}}{#1}%
+}
+
+\boldname{Chen}{Canyi}{C.}
+
+% \usepackage[utf8]{inputenc}
+% \usepackage[english,french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome}
+% \usepackage{fontspec}
+
+% \usepackage{academicons}
+
+\usepackage{graphicx,wrapfig}
+\usepackage{multicol}
+\usepackage{url}
+\usepackage[colorlinks=true, pdfstartview=FitV, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
+\pdfcompresslevel=9
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+
+\textheight=10in
+\footskip=0pt
+
+\fancyhf{} % clear all header and footer fields
+\renewcommand{\headrulewidth}{0pt} % no line in header area
+\fancyfoot[R]{Page \thepage} % other info in "inner" position of footer line
+\pagestyle{fancy}
+
+\usepackage{enumitem}
+\newenvironment{symenum}
+ {\enumerate[label=\arabic*.\noexpand\thisenumsymbol,align=left]}
+ {\endenumerate}
+\newcommand\thisenumsymbol{}
+\newcommand\itemsymbol[1]{%
+  \renewcommand{\thisenumsymbol}{#1}%
+  \item
+}
+\usepackage{CJK}
+
+
+\begin{document}{\sc \Large Curriculum Vitae}
+% Set the page style to "fancy"...
+\pagestyle{fancy}
+%... then configure it.
+% \fancyhead{} % clear all header fields
+% \fancyhead[R]{\updateinfo}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[R]{\updateinfo}
+% \fancyfoot[LO,CE]{From: K. Grant}
+\fancyfoot[C]{Page \thepage}
+
+\begin{resume}
+
+
+% === PERSONAL INFO ===
+ 
+\section{\mysidestyle Personal Information}
+    {\bf Canyi Chen (\begin{CJK*}{UTF8}{gbsn}陈灿贻\end{CJK*})} %\\
+   % PhD \\
+%\vspace{-8.5mm}
+\vspace{-3mm}
+
+\begin{multicols}{2}
+{
+\begingroup
+    %Institute of Statistics and Big Data \\ 
+    %Renmin University of China, Beijing, China\\ 
+    Male, 1997.05\\
+    \emph{ORCID $\!:$} \href{https://orcid.org/0000-0002-0673-5812}{0000-0002-0673-5812} \\
+    \emph{Email $\!:$} \space \href{mailto:cychen.stats@outlook.com}{cychen.stats@outlook.com} \\
+    \emph{Homepage $\!:$} \space \href{https://canyi-chen.github.io/}{https://canyi-chen.github.io/}
+    
+\endgroup
+}
+\end{multicols}
+
+
+      
+    
+% === OBJECTIVE ===
+\section{\mysidestyle Education}
+    \textbf{Renmin University of China}, Beijing, China (September 2018 -- July 2023) \\
+      \indent \hspace{5mm} PhD in {\it Statistics}
+
+    \vspace{-2mm}
+    \textbf{Beijing Normal University}, Beijing, China (September 2014 -- July 2018) \\
+      \indent \hspace{5mm} BSc in {\it Mathematics and Applied Mathematics}
+
+
+
+
+% === RESEARCH INTEREST ===
+\section{\mysidestyle Research Interests}\vspace{1mm}	
+    % {\bf (Decentralized) Distributed statistical learning; Non-Linear dependence measure} 
+    {\bf High-dimensional data analysis; Non-Linear dependence measure} 
+    % \begin{description}
+    %     \item {\bf Distributed statistical learning; Non-Linear dependence measure} 
+    %     %\item {\bf Non-Linear dependence measure}
+    % \end{description}
+
+
+
+\section{\mysidestyle Journal Publications}\vspace{1mm}	
+\begin{refsection} % refsection environment
+\nocite{chen2022DistributedDecodingHeterogeneous,chen2022DistributedEstimationHeterogeneous,chen2024DistributedSparseComposite,zhang2022SlicedIndependenceTest,Song2020,he2022DistributedEstimationHigh,chen2022ScalableGloballyConvergent,chen2022FastOptimizationMethods}
+%\nocite{chen2022DistributedDecodingHeterogeneous,chen2022DistributedEstimationHeterogeneous,chen2024DistributedSparseComposite,zhang2022SlicedIndependenceTest,chen2022ScalableGloballyConvergent}
+\printbibliography[heading=none]
+\end{refsection}
+
+\section{\mysidestyle Preprints}
+\begin{refsection} % refsection environment
+\nocite{chen2022RobustMultiTask,chen2022DistributedEstimationGap,chen2022DecentralizedDistributedEstimation,chen2022RobustFastLowRank,chen2022CommunicationEfficientDistributedSupportVectorMachine,chen2023Byzatine,hao2023ClassDirectedAcyclic,Al-Hinai2024VitaminD}
+
+\printbibliography[heading=none]
+\end{refsection}
+
+% \section{\mysidestyle Working \\Papers}
+% \begin{refsection} % refsection environment
+% \nocite{chen2022CommunicationEfficientDistributedSupportVectorMachine}
+
+% \printbibliography[heading=none]
+% \end{refsection}
+
+
+% === SOFTWARES ===
+\section{\mysidestyle Open-source Software}\vspace{3mm}  
+
+% [![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/last-month/praise?color=blue)](https://r-pkg.org/pkg/praise)
+% https://cranlogs.r-pkg.org/badges/grand-total/SIT
+% \begin{markdown}
+% [![](https://cranlogs.r-pkg.org/badges/ggplot2)](https://cran.rstudio.com/web/packages/ggplot2/index.html)
+% \end{markdown}
+% \immediate\write18{wget -O ggplot2.svg https://cranlogs.r-pkg.org/badges/ggplot2}
+
+\begin{description}
+    \item[]  \textsc{SIT: Association Measurement Through Sliced Independence Test} (\href{https://cran.r-project.org/web/packages/SIT/}{SIT}) 
+\end{description}
+
+% === GRANTS ===
+\section{\mysidestyle Grant Proposals}\vspace{1mm}
+%This section includes sponsored research funding and awarded proposals.
+\begin{description}
+    \item[Canonical Correlation Analysis of Functional Data] -- {\it Renmin University of China}  \hfill \textsl{2020} 
+    \item[Asymptotics of the Derrida--Retaux Branch System] -- \textit{National Students' Innovation and Entrepreneurship Training Program} \hfill \textsl{2016} 
+\end{description}
+
+% === ACHIEVMENTS ===
+% === AWARDS ===
+\section{\mysidestyle Fellowships {\footnotesize \&} Honors  {\footnotesize \&} Awards}\vspace{1mm}	
+
+\begin{description}
+        \item[National Scholarship of China]   
+        \hfill \textsl{2023} 
+        \item[Outstanding Graduate of Renmin University of China]
+        \hfill \textsl{2023} 
+        \item[Wu Yuzhang Scholarship Finalist]
+        \hfill \textsl{2023} 
+        \item[Jingdong Special Scholarship Finalist]
+        \hfill \textsl{2022} 
+        \item[Academic First Class Scholarship]   
+        \hfill \textsl{2019--2022} 
+        \item[Academic Second Class Scholarship]   
+        \hfill \textsl{2018} 
+        \item[Study Excellence Scholarships]   
+        \hfill \textsl{2020--2021} 
+        \item[Merit Student]   
+        \hfill \textsl{2020}
+        \item[Third Class Scholarship for Social Work and Volunteer Service]   
+        \hfill \textsl{2019}% BNU
+        \item[National Second Prize in {\small National Undergraduate Mathematical Modeling Contest}]   
+        \hfill \textsl{2016} 
+        \item[Jingshi First Class Competition Scholarships]   
+        \hfill \textsl{2017} 
+        \item[National Inspirational Scholarship]   
+        \hfill \textsl{2015--2017} 
+        \item[Jingshi First Class Competition Scholarships]   
+        \hfill \textsl{2016} 
+        \item[Jingshi Second Class Scholarships]   
+        \hfill \textsl{2015, 2017} 
+        \item[Merit Student]   
+        \hfill \textsl{2015} 
+
+        \item[Poster Awards $\!:$]  
+\end{description}
+\begin{enumerate}
+    \item The best presented poster, {\textbf{Distributed Decoding from Heterogeneous 1-Bit Compressive Measurements}}, \textsl{Statistics and Data Science Young Scholars Forum}, Beijing. \href{https://canyi-chen.github.io/static/Poster/1bit.pdf}{[pdf]} \hfill \textsl{2020}
+\end{enumerate}
+
+% === HISTORY ===
+\section{\mysidestyle Working Experience}\vspace{1mm}	     
+\begin{description}
+    \item[Teaching Assistant]\small{Renmin University of China} \\
+            Computer Skills in Data Science -- PhD Level \hfill \textsl{Fall 2019} \\
+            Asymptotic Statistics -- PhD Level \hfill \textsl{Fall 2020} \\
+            Natural Language Processing -- PhD Level \hfill \textsl{Spring 2021} 
+    \item[Anonymous Referee for {\it  Statistica Sinica}, {\it IEEE Transactions on Neural Networks and Learning Systems}]
+    \item[Voluntary Teachers] in \\
+    Pengshui, Chongqing, China \hfill 2016 \\
+    Yongding, Fujian, China \hfill 2017
+    % \item[Monitor] in Institute of statistics and big data, Renmin University of China \hfill 2018--2020
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\mysidestyle Selected Seminars {\footnotesize \&} Presentations} \vspace{1mm}	\vspace{1mm}	
+
+\begin{enumerate}
+\item Data Science Frontiers Forum, Southwestern University of Finance and Economics, Chengdu, China, July 2021 {\bf (invited speaker)}
+\item The 7th International Conference on Statistical Optimization and Learning, Beijing Jiaotong University, Beijing, China, December 2022 {\bf (invited speaker)}
+% \item The 24th Beijing-Tianjin-Hebei Youth Seminar on Probability and Statistics, Tsinghua University, 2023
+\end{enumerate}
+
+% === SKILLS ===
+\section{\mysidestyle Skills}\vspace{1mm}	  
+\begin{description}
+			\item[Programming languages $\!\!:$] Python, R, C++, Bash, \LaTeX, MATLAB, SQL.
+			\item[Languages $\!\!:$] Chinese, English, Eastern Min.
+\end{description}
+
+% \section{\mysidestyle References} 
+% \vspace{0mm}
+% \begin{multicols}{2}
+% \textbf{Dr. Liping Zhu} -- \emph{Thesis Advisor} \\
+% \indent \hspace{3mm} Professor of Statistics\\ 
+% \indent \hspace{3mm} Dean of Institute of Statistics and Big Data \\
+% \indent \hspace{3mm} Renmin University of China \\
+% %\indent \hspace{3mm} Ann Arbor, MI, 48104 \\ 
+% \indent \hspace{3mm} \emph{Email $\!:$} \href{mailto:zhu.liping@ruc.edu.cn}{zhu.liping@ruc.edu.cn} \\
+
+% \vspace{-3mm}
+% \textbf{Dr. Wangli Xu} -- \emph{Thesis Committee Member}  \\
+% \indent \hspace{3mm} Professor of Statistics \\
+% \indent \hspace{3mm} Renmin University of China \\
+% %\indent \hspace{3mm} Ann Arbor, MI, 48104 \\ 
+% \indent \hspace{3mm} \emph{Email $\!:$} \href{mailto:wlxu@ruc.edu.cn}{wlxu@ruc.edu.cn} \\
+% \end{multicols}
+
+% % \section{\mysidestyle Major Collaborators}  \vspace{0mm}
+
+% %My primary collaborators can provide an additional letter of recommendation upon request. 
+
+% %\vspace{-3mm}
+% \begin{multicols}{2}
+% {
+% \begingroup
+
+% \vspace{0mm}
+% \textbf{Dr. Yuwen Gu} \\
+% \indent \hspace{3mm} Assistant Professor of Statistics \\
+% \indent \hspace{3mm} University of Connecticut \\
+% % \indent \hspace{3mm} Storrs, CT 06269, USA  \\
+% \indent \hspace{3mm} \emph{Email $\!:$} \href{mailto:yuwen.gu@uconn.edu}{yuwen.gu@uconn.edu} \\
+
+
+% % \vspace{-2mm}
+% \textbf{Dr. Bingzhen Chen} \\
+% \indent \hspace{3mm} Assistant Professor of Statistics  \\
+% \indent \hspace{3mm} Hangzhou Dianzi University \\
+% %\indent \hspace{3mm} Ann Arbor, MI, 48104 \\ 
+% \indent \hspace{3mm} \emph{Email $\!:$} \href{mailto:chenbingzhen6026@163.com}{chenbingzhen6026@163.com} \\
+
+
+% \endgroup
+% }
+% \end{multicols}
+% \begin{multicols}{2}
+% {
+% \begingroup
+
+% \vspace{0mm}
+% \textbf{Dr. Hui Zou} \\
+% \indent \hspace{3mm} Professor of Statistics \\
+% \indent \hspace{3mm} University of Minnesota \\
+% % \indent \hspace{3mm} Minneapolis, MN 55455, USA  \\
+% \indent \hspace{3mm} \emph{Email $\!:$} \href{mailto:zouxx019@umn.edu}{zouxx019@umn.edu} \\
+
+
+% \endgroup
+% }
+% \end{multicols}
+
+\end{resume}  
+\end{document}
+
