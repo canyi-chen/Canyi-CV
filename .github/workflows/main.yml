@@ -16,6 +16,7 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
+          docker_image: ghcr.io/xu-cheng/texlive-full:20240315
       - uses: actions/upload-artifact@v3
         with:
           name: PDF
