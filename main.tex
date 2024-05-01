@@ -190,16 +190,16 @@ sorting=none
 %************************************************ added <<<<
 % https://tex.stackexchange.com/questions/630861/add-page-number-on-moderncv-of-classic-style
 % https://tex.stackexchange.com/questions/646284/get-number-of-pages-in-document/646292#646292
-% \usepackage{lastpage}
-\usepackage{zref-totpages}
-\cfoot{\addressfont\itshape\textcolor{gray}{Page \thepage\ of \ztotpages}}
+\usepackage{lastpage}
+% \usepackage{zref-totpages}
+\cfoot{\addressfont\itshape\textcolor{gray}{Page \thepage\ of \pageref{LastPage}}}
 \setlength{\footskip}{50pt} % <<<<<<<<<<<<<<<<<<<<<<<<<<<<<< adjust
 %*********************************************************
 \usepackage{fancyhdr}
-\fancyfoot[R]{\updateinfo}
 \newcommand{\updateinfo}[1][\today]{%\par\vfill\hfill%
 {%
 \scriptsize\itshape\color{gray}Last updated on #1}}
+\fancyfoot[R]{\updateinfo}
 %----------------------------------------------------------------------------------
 %            content
 %----------------------------------------------------------------------------------
