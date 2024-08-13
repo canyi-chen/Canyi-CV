@@ -89,10 +89,20 @@
 \usepackage[%bibstyle=publist,plauthorhandling=highlight
 backend=biber,style=nature, % nature
 doi=true,maxbibnames=99,
-sorting=none
+sorting=none,defernumbers=true
 % sorting=nymdt
 %sorting=nymdt%https://tex.stackexchange.com/questions/51434/biblatex-citation-order
 ]{biblatex}
+
+% \usepackage[authordate,natbib,url=false,isbn=false,backend=biber,refsection=section,giveninits=true,%https://tex.stackexchange.com/questions/478880/cite-with-authors-initial-in-biblatex-chicago-without-rewriting-bibliography
+% maxcitenames=2%https://tex.stackexchange.com/questions/69028/set-limit-to-one-author-when-using-et-al-in-biblatex
+% ]{biblatex-chicago}  
+% \renewcommand{\cite}{\citet}
+% \AtEveryBibitem{
+%   \clearfield{month}
+% } % remove month % <- by ccy
+
+
 % \plauthorname[Canyi]{Chen}
 \addbibresource{ref.bib}
 
@@ -262,6 +272,7 @@ sorting=none
 
 \section{Fellowships, Honors, and Awards}
 % \cventry{year--year}{Job title}{Employer}{City}{}{Description}
+\cventry{2024}{Excellent Doctoral Dissertation Award of Renmin University of China}{}{}{}{}
 \cventry{2024}{UMPDA Conference Award}{}{}{}{}
 \cventry{2023}{National Scholarship of China}{}{}{}{}
 \cventry{2023}{Outstanding Graduate of Renmin University of China}{}{}{}{}
@@ -290,7 +301,7 @@ sorting=none
 \cventry{Spring 2021}{Natural Language Processing -- PhD Level}{}{}{}{}
 
 \subsection{Anonymous Referee}
-\cvitem{}{\textit{Statistica Sinica (22, 23)}, \textit{IEEE Transactions on Neural Networks and Learning Systems (23, 24x2)}, \textit{Statistics and Computing (24)}, \textit{Annals of Applied Statistics (24)}, \textit{SCIENCE CHINA Mathematics (24)}}
+\cvitem{}{\textit{Statistica Sinica (22, 23)}, \textit{IEEE Transactions on Neural Networks and Learning Systems (23, 24x2)}, \textit{Statistics and Computing (24)}, \textit{Annals of Applied Statistics (24)}, \textit{SCIENCE CHINA Mathematics (24)}, \textit{Acta Mathematica Scientia (24)}}
 
 % \subsection{Voluntary Teacher}
 % \cventry{2016}{Pengshui, Chongqing, China}{}{}{}{}
