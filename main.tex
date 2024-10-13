@@ -87,9 +87,9 @@
 
 % OPT2 - Using biber
 \usepackage[%bibstyle=publist,plauthorhandling=highlight
-backend=biber,style=nature, % nature
-doi=true,maxbibnames=99,
-sorting=none,defernumbers=true
+backend=biber, bibstyle=numeric,%,style=nature, % nature
+doi=true,maxbibnames=99,giveninits=true,uniquename=false,
+sorting=ydnt,sortcites=true,defernumbers=true
 % sorting=nymdt
 %sorting=nymdt%https://tex.stackexchange.com/questions/51434/biblatex-citation-order
 ]{biblatex}
@@ -186,6 +186,22 @@ sorting=none,defernumbers=true
 
 \boldname{Chen}{Canyi}{C.}
 
+\renewcommand*{\mkbibnamegiven}[1]{
+\ifitemannotation{highlight}
+{\textbf{#1}}
+{#1}}
+\renewcommand*{\mkbibnamefamily}[1]{
+\ifitemannotation{highlight}
+  {\textbf{#1}}
+  {#1}%
+\ifitemannotation{first}
+  {\textsuperscript{*}}
+  {}%
+\ifitemannotation{corresponding}
+  {$^\dagger$}
+  {}%
+}%%
+
 % https://tex.stackexchange.com/questions/156706/functionality-of-apacites-nocitemeta-with-biblatex-apa-adding-asterisks-to-aut
 % \DeclareBibliographyCategory{asterisk}
 % \renewbibmacro*{begentry}{%
@@ -260,7 +276,9 @@ sorting=none,defernumbers=true
 
 \nocite{*}
 % \printbibheading
-\printbibliography[type=article,heading=subbibliography,title={Journal Articles}]
+\defbibnote{mynote}{\list{}{\leftmargin6.5em}\item[]$^*$ indicates equal contributions\\ $^\dagger$ indicates corresponding author(s)
+   (if not the senior author)\\ \textbf{boldface} indicates me \\}
+\printbibliography[type=article,heading=subbibliography,title={Journal Articles},prenote=mynote]
 \printbibliography[type=unpublished,heading=subbibliography,title={Preprints}]
 
 \section{Open-source Software}
