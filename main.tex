@@ -9,7 +9,7 @@
 \documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
 % moderncv themes
-\moderncvstyle{classic}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+\moderncvstyle{banking}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
 \moderncvcolor{blue}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
 %\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
 % \nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
@@ -51,7 +51,7 @@
 \homepage{canyi-chen.github.io}                         % optional, remove / comment the line if not wanted
 
 % Social icons
-% \social[linkedin]{canyi-chen-b031a228b}                        % optional, remove / comment the line if not wanted
+\social[linkedin]{canyi-chen-b031a228b}                        % optional, remove / comment the line if not wanted
 % \social[xing]{john\_doe}                           % optional, remove / comment the line if not wanted
 % \social[twitter]{ji\_doe}                             % optional, remove / comment the line if not wanted
 % \social[github]{jdoe}                              % optional, remove / comment the line if not wanted
@@ -60,13 +60,13 @@
 % \social[bitbucket]{jdoe}                           % optional, remove / comment the line if not wanted
 % \social[skype]{jdoe}                               % optional, remove / comment the line if not wanted
 \social[orcid]{0000-0002-0673-5812}                  % optional, remove / comment the line if not wanted
-% \social[researchgate]{jdoe}                        % optional, remove / comment the line if not wanted
+\social[researchgate]{Chen\_Canyi}                        % optional, remove / comment the line if not wanted
 % \social[researcherid]{jdoe}                        % optional, remove / comment the line if not wanted
 % \social[telegram]{jdoe}                            % optional, remove / comment the line if not wanted
 % \social[whatsapp]{12345678901}                     % optional, remove / comment the line if not wanted
 % \social[signal]{12345678901}                       % optional, remove / comment the line if not wanted
 % \social[matrix]{@johndoe:matrix.org}               % optional, remove / comment the line if not wanted
-% \social[googlescholar]{googlescholarid}            % optional, remove / comment the line if not wanted
+\social[googlescholar]{\_EUijuQAAAAJ}            % optional, remove / comment the line if not wanted
 
 
 % \extrainfo{additional information}                 % optional, remove / comment the line if not wanted
@@ -148,7 +148,7 @@ sorting=ydnt,sortcites=true,defernumbers=true
     \printfield{prefixnumber}%
     \printfield{labelnumber}}}
 {\setlength{\bibhang}{0pt}%
-\setlength{\leftmargin}{7.5em}%
+% \setlength{\leftmargin}{7.5em}%
 \setlength{\itemindent}{0pt}%
 \setlength{\itemsep}{\bibitemsep}%
 \setlength{\parsep}{\bibparsep}}}
@@ -236,7 +236,7 @@ sorting=ydnt,sortcites=true,defernumbers=true
 \makecvtitle
 
 \section{Experience}
-\cventry{2023 -- }{Postdoc Researcher}{Department of Biostatistics, University of Michigan}{}{}{}
+\cventry{2023 -- }{Postdoc Researcher}{Department of Biostatistics, University of Michigan}{Ann Arbor}{}{}
 
 \section{Education}
 \cventry{2018 -- 2023}{PhD in Statistics}{Renmin University of China}{Beijing}{%\textit{GPA: 4.0}
@@ -247,7 +247,7 @@ sorting=ydnt,sortcites=true,defernumbers=true
 }
 
 \section{Research Interests}
-    \cvlistitem{High-dimensional data analysis; Non-Linear dependence measure}
+    \cvlistitem{Distributed statistical computing; High-dimensional data analysis; Non-Linear dependence measure}
 % \section{Master thesis}
 % \cvitem{title}{\emph{Title}}
 % \cvitem{supervisors}{Supervisors}
@@ -276,12 +276,13 @@ sorting=ydnt,sortcites=true,defernumbers=true
 
 \nocite{*}
 % \printbibheading
-\defbibnote{mynote}{\list{}{\leftmargin6.5em}\item[]$^*$ indicates equal contributions\\ $^\dagger$ indicates corresponding author(s)
+\defbibnote{mynote}{\list{}{%\leftmargin6.5em
+}\item[]$^*$ indicates equal contributions\\ $^\dagger$ indicates corresponding author(s)
    (if not the senior author)\\ \textbf{boldface} indicates me \\}
 \printbibliography[type=article,heading=subbibliography,title={Journal Articles},prenote=mynote]
 \printbibliography[type=unpublished,heading=subbibliography,title={Preprints}]
 
-\section{Open-source Software}
+\section{Open-Source Software}
 \cvlistitem{\textsc{SIT: Association Measurement Through Sliced Independence Test} (\href{https://cran.r-project.org/web/packages/SIT/}{SIT})}
 
 \section{Grant Proposals}
@@ -301,7 +302,7 @@ sorting=ydnt,sortcites=true,defernumbers=true
 % \cventry{2020 -- 2021}{Study Excellence Scholarship}{}{}{}{}
 % \cventry{2020}{Merit Student}{}{}{}{}
 % \cventry{2019}{Third Class Scholarship for Social Work and Volunteer Service}{}{}{}{}
-\cventry{2020}{The best presented poster, {\textbf{Distributed Decoding from Heterogeneous 1-Bit Compressive Measurements}}, \textsl{Statistics and Data Science Young Scholars Forum}, Beijing. \href{https://canyi-chen.github.io/static/Poster/1bit.pdf}{[pdf]}}{}{}{}{}
+\cventry{2020}{The best presented poster}{}{}{}{{\textbf{Distributed Decoding from Heterogeneous 1-Bit Compressive Measurements}}, \textsl{Statistics and Data Science Young Scholars Forum}, Beijing. \href{https://canyi-chen.github.io/static/Poster/1bit.pdf}{[pdf]}}
 % %BNU
 \cventry{2016}{National Second Prize in {\small National Undergraduate Mathematical Modeling Contest}}{}{}{}{}
 % \cventry{2017}{Jingshi First Class Competition Scholarship}{}{}{}{}
@@ -319,13 +320,14 @@ sorting=ydnt,sortcites=true,defernumbers=true
 \cventry{Spring 2021}{Natural Language Processing -- PhD Level}{}{}{}{}
 
 \subsection{Anonymous Referee}
-\cvitem{}{\textit{Statistica Sinica (22, 23)}, \textit{IEEE Transactions on Neural Networks and Learning Systems (23, 24x2)}, \textit{Statistics and Computing (24)}, \textit{Annals of Applied Statistics (24)}, \textit{SCIENCE CHINA Mathematics (24)}, \textit{Acta Mathematica Scientia (24)}, \textit{The American Statistician (24)}} 
+\cvitem{}{\textit{Statistica Sinica (22, 23)}, \textit{IEEE Transactions on Neural Networks and Learning Systems (23, 24x3)}, \textit{Statistics and Computing (24)}, \textit{Annals of Applied Statistics (24)}, \textit{SCIENCE CHINA Mathematics (24)}, \textit{Acta Mathematica Scientia (24)}, \textit{The American Statistician (24)}} 
 
 % \subsection{Voluntary Teacher}
 % \cventry{2016}{Pengshui, Chongqing, China}{}{}{}{}
 % \cventry{2017}{Yongding, Fujian, China}{}{}{}{}
 
 \section{Seminars {\&} Presentations}
+\cvitem{}{Graduate Student Seminar, Department of Statistics, George Washington University, Washington, D.C., October 18, 2024 (invited speaker)}
 \cvitem{}{ICSA Applied Statistics Symposium, Nashville, Tennessee, June 16 - 19, 2024 (invited speaker)}
 \cvitem{}{The 7th International Conference on Statistical Optimization and Learning, Beijing Jiaotong University, Beijing, China, December 2022 (invited speaker)}
 \cvitem{}{Data Science Frontiers Forum, Southwestern University of Finance and Economics, Chengdu, China, July 2021 (invited speaker)}
