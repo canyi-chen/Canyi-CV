@@ -1,0 +1,265 @@
+% !TEX program = pdflatex
+%% !BIB program = biber
+% !TeX encoding = UTF-8
+% !TeX root = ../application.tex
+\documentclass[../application.tex]{subfiles}
+
+
+% \renewcommand{\thesubsection}{\Alph{subsection}}
+
+% Margins standard for application documents
+\geometry{left=1in, right=1in, top=1in, bottom=1in}
+
+% Formatting sections
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+
+
+\begin{document}
+
+
+% TODO:BEGIN:REFEREE3
+%\iffalse
+\newpage
+\pagestyle{fancy}
+% \setcounter{page}{1}
+\resetpageaux
+
+
+
+%\centerline{\bf Point-by-Point Responses to Referee Two}
+% \subsection*{%
+%     {\Large\bf Teaching Statement}
+% }
+%\vspace{1cm}
+
+
+% --- Header ---
+\begin{center}
+    {\Large \textbf{Teaching Statement}} \\
+    % \vspace{0.2cm}
+    % \textbf{Canyi Chen} \\
+    % \textit{Department of Statistics and Data Science, Tsinghua University}
+\end{center}
+
+\vspace{0.3cm}
+
+% --- Introduction ---
+My goal as an educator is to cultivate critical and independent thinkers who regard statistics not merely as a set of formulas, but as a principled framework for reasoning under uncertainty. At Tsinghua University, I aspire to contribute to a curriculum that prepares students to lead in an era defined by the convergence of statistics, optimization, and artificial intelligence. My teaching philosophy emphasizes that rigorous theoretical understanding must be complemented by ``from-scratch'' algorithmic implementation, enabling students to peer inside the ``black box'' of modern statistical and AI methodologies.
+
+
+% --- Teaching Philosophy & Methods (Combined for flow) ---
+\subsection*{Teaching Philosophy: Bridging Theory, Code, and Critical Thinking}
+
+\textit{1. Intuition Before Rigor.}
+Students develop lasting understanding when they grasp the \textit{why} before the \textit{how}. Abstract results become meaningful when anchored in statistical intuition. For example, when introducing likelihood-based inference, I begin with the information-theoretic rationale for modeling before transitioning to asymptotic theory. Presenting convergence not merely as a technical requirement, but as a guarantee of reliability, helps students recognize the purpose and value of formal proofs.
+
+\textit{2. Integration of Theory and Computation.}
+A core principle of my pedagogy is that statisticians must understand methods at the algorithmic level. In introductory courses, I deliberately avoid ``black-box'' libraries and require students to implement fundamental procedures, such as BFGS and Newton–Raphson, from scratch. This approach exposes subtle failure modes---such as instability due to poor initialization or sensitivity to outliers---that remain hidden when relying solely on pre-packaged software.
+
+\textit{3. Critical Judgment in the GenAI Era.}
+Rather than prohibiting LLMs, I position them as subjects of statistical evaluation. I emphasize that AI-generated code or analysis should be treated as a \textit{hypothesis} requiring scrutiny. I design assignments in which students must audit AI-generated statistical outputs, identify flawed assumptions, and correct reasoning errors. This reinforces the principle that while AI may expedite computation, the responsibility for inference ultimately rests with the statistician.
+
+
+% --- Teaching Experience (Concrete Examples) ---
+\subsection*{Teaching and Mentoring Experience}
+
+My teaching philosophy has been shaped through service as a Teaching Assistant for Ph.D.-level courses in \textit{Data Science Computing}, \textit{Asymptotic Statistics}, and \textit{Natural Language Processing}.
+
+\textit{Case Study: Data Science Computing.}
+In the Ph.D.-level course \textit{Computer Skills in Data Science}, I noticed that while students were comfortable applying Python libraries, they struggled to diagnose convergence issues in non-standard models. To address this, I designed a lab module in which students implemented robust regression techniques from first principles. Using a dataset contaminated with heavy-tailed noise, I demonstrated the failure of ordinary least squares and guided students to implement the Huber loss and iteratively reweighted least squares. This exercise provided a concrete understanding of how robustness is achieved at the algorithmic level.
+
+\textit{Case Study: Asymptotic Statistics.}
+In \textit{Asymptotic Statistics}, students often found it challenging to connect theoretical limit theorems with finite-sample behavior. I led discussion sessions where we used simulation to stress-test asymptotic guarantees. By generating data from both symmetric and skewed distributions, we visualized how slowly the Central Limit Theorem manifests under heavy skewness. These simulations helped students appreciate both the power and the limitations of the asymptotic theory they were proving.
+
+\textit{Research Mentoring.}
+Outside the classroom, I view mentoring as an individualized extension of teaching. I have supervised several junior researchers through the full research cycle—from formulating research questions and conducting literature reviews to designing simulations and developing theoretical arguments. These collaborations have resulted in publications in outlets such as \textit{JCGS} and \textit{Statistica Sinica}. I am committed to bringing this same mentorship-driven approach to supporting graduate students at Tsinghua.
+
+
+% --- Future Courses ---
+\subsection*{Teaching Interests at Tsinghua}
+
+I am prepared to teach core undergraduate courses such as \textit{Probability}, \textit{Mathematical Statistics}, and \textit{Regression Analysis}. At the graduate level, I am eager to develop advanced courses that align with both my research expertise and the department's strategic priorities:
+
+\begin{itemize}[leftmargin=*]
+\item \textit{Distributed Learning \& Optimization:} A course on divide-and-conquer estimators, communication-efficient algorithms, and privacy-preserving inference, addressing the computational challenges of modern large-scale data.
+\item \textit{High-Dimensional Mediation Analysis:} A seminar focused on causal mechanisms in complex systems, with emphasis on composite null testing, copula structural equation models, and applications in genomics and digital health.
+\item \textit{Trustworthy Inference with GenAI:} A forward-looking course on the statistical foundations of synthetic data, optimal stopping rules for AI training, and safeguards for AI-augmented decision-making.
+\end{itemize}
+
+\subsection*{Conclusion}
+I am excited about the opportunity to join the Department of Statistics and Data Science at Tsinghua University. I look forward to fostering a learning environment in which students are challenged to become both rigorous theoreticians and capable computational scientists, equipped to address the data-driven challenges of the future.
+
+
+
+\iffalse
+
+
+My goal as an educator is to help students become critical, independent thinkers in statistics and data science. I want students to view statistical analysis as a coherent framework for reasoning under uncertainty, rather than a collection of formulas. In both introductory and advanced courses, I strive to show how rigorous theory, carefully designed algorithms, and modern computational tools fit together. I also recognize that emerging technologies such as large language models (LLMs) are reshaping how students engage with data, and I aim to teach students to use these tools thoughtfully and responsibly. At Tsinghua University, I hope to contribute to a curriculum that prepares students to lead in an era where statistics, optimization, and AI increasingly intersect.
+
+\subsection*{Teaching Philosophy}
+
+My teaching philosophy centers on three principles. First, I begin with core ideas rather than formulas. Students learn most effectively when they see the motivation behind a concept—why it matters, what problem it solves, and how it fits into the broader landscape of statistical reasoning. For example, when introducing likelihood-based methods, I start with the intuition behind modeling and the notion of information before moving to asymptotic theory and computation.
+
+Second, I emphasize a tight integration of theory and computation. Much of my research involves designing algorithms grounded in statistical principles, and I bring this perspective to the classroom. When teaching M-estimation or distributed optimization, I derive the core theoretical results and then demonstrate how the corresponding algorithms behave in practice. Well-designed simulations help students see convergence, robustness, and failure modes rather than simply reading about them.
+
+Third, I aim to cultivate independence and critical judgment. Students should routinely ask themselves whether a model is appropriate, what assumptions underlie their inference, and how sensitive their conclusions are to violations. To support this, I design assignments that blend derivations with small simulation experiments or data analysis tasks. These encourage students to reason both mathematically and empirically, helping them become more reflective analysts.
+
+A simple framework that guides my course preparation is to ask three questions:  
+(1) What is the central idea I want students to take away?  
+(2) How does this idea connect to real-world applications and data-analytic practice?  
+(3) What conceptual or psychological obstacles might students face?  
+These questions keep my teaching focused, coherent, and responsive to students' needs.
+
+\subsection*{Teaching and Mentoring Experience}
+
+I have served as a teaching assistant for several Ph.D.-level courses, including data science computing, asymptotic statistics, and natural language processing. In these roles, I taught programming skills, simulation-based methods, and theoretical tools central to modern statistics. For example, in the data science computing course, I designed lab assignments in R and Python where students implemented classical and modern algorithms from scratch. In asymptotic statistics, I led discussion sections that clarified the structure of proofs and helped bridge abstract probability with applied problems. In natural language processing, I highlighted how probabilistic modeling principles underpin both traditional and deep-learning approaches.
+
+Beyond formal classrooms, I have mentored junior researchers on projects that led to publications in \emph{JCGS} and \emph{Statistica Sinica}. When supervising research, I structure the process into stages: identifying the problem, reviewing the literature, designing simulations, developing theoretical results, and revising manuscripts. This progression helps students transform an initial idea into a rigorous scholarly contribution. Earlier, I also volunteered in high schools in Chongqing and Fujian, where limited resources and diverse preparation levels taught me to explain concepts flexibly and to build confidence gradually. Those experiences continue to shape my inclusive teaching style.
+
+\subsection*{Teaching Methods and Classroom Practices}
+
+In my own courses, I aim to strike a balance between structured exposition and interactive engagement. I start each lecture by articulating the “big picture”—what problem we are addressing, why it matters, and how today’s topic connects to previous material. I incorporate short in-class questions or brief discussions to give students space to process ideas and to allow me to gauge their understanding. Assignments combine theoretical derivations with computational exercises, such as implementing estimators, exploring robustness, or running small simulation studies. These tasks help students confront the gap between theory and practice, deepening their understanding.
+
+For advanced courses, I include open-ended projects using real datasets. These projects require students to formulate questions, justify modeling choices, assess assumptions, and present their findings clearly. Such experiences prepare students for research and interdisciplinary collaboration. I also emphasize a supportive learning environment by maintaining consistent office hours, offering detailed feedback, and using mid-semester evaluations to adjust pacing and emphasis.
+
+\subsection*{Teaching in the Era of Generative AI}
+
+Generative AI tools, especially LLMs, are now embedded in students’ workflows. Rather than restricting them, I teach students to evaluate such tools critically. I demonstrate cases where AI-generated code or analyses are subtly incorrect or statistically invalid, and I encourage students to diagnose the issues using course concepts. I articulate clear policies: while genAI can assist with brainstorming or coding syntax, the core reasoning and interpretation must be the students’ own. In advanced courses, I design assignments where students critique AI-generated analyses, examining assumptions, robustness, and validity. These activities reinforce the central idea that AI can support—but never replace—careful statistical thinking.
+
+\subsection*{Courses I Can Teach at Tsinghua}
+
+I am prepared to teach core undergraduate courses such as probability, mathematical statistics, regression and generalized linear models, introductory statistical learning, and statistical computing. At the graduate level, I can teach high-dimensional and robust statistics, distributed learning, causal inference and mediation analysis, quantile and composite-quantile methods, and advanced statistical computing with an emphasis on genAI-integrated workflows. These offerings align naturally with Tsinghua’s strengths at the interface of statistics, optimization, and AI.
+
+\subsection*{Mentoring and Future Development}
+
+As an advisor, I motivate students to articulate their ideas early, set realistic milestones, and iterate repeatedly on analysis and writing. I work closely with students to prepare research presentations and conference submissions and to understand the norms of scholarly communication. Looking ahead, I plan to continue refining my teaching through evidence-based instructional practices, collaboration with colleagues, and student feedback. Ultimately, I hope students leave my courses not only with strong technical skills but also with the confidence and intellectual curiosity to push the research frontier in a rapidly evolving data and AI landscape.
+
+\fi
+
+
+\iffalse
+My goal in teaching is to help students become critical, independent thinkers in statistics and data science, equipped with solid theoretical foundations, computational skills, and an awareness of the opportunities and risks of modern AI tools. I want students to see statistics not as a list of formulas but as a coherent way of reasoning under uncertainty—connected to real scientific, engineering, and policy problems. My teaching and mentoring experience spans Ph.D.-level courses in data science computing, asymptotic statistics, and natural language processing, as well as volunteer teaching in under-resourced high schools in China. At Tsinghua, I am prepared and enthusiastic to teach both core undergraduate courses (probability, mathematical statistics, regression, statistical learning) and advanced graduate courses in high-dimensional and distributed methods, causal inference, and genAI-enhanced statistical workflows.
+
+\section{Teaching Philosophy}
+
+When preparing a class, I start from three questions:
+
+\begin{enumerate}
+    \item What is the core idea I want students to take away?
+
+\item How does this idea connect to real-world applications and data-analytic practice?
+
+\item What obstacles—conceptual, technical, or psychological—might students face in learning it?
+\end{enumerate}
+
+These questions keep the students and their long-term learning at the center. I organize each lecture around a storyline: beginning with an intuitive question or motivating example, moving to formal definitions and theorems, and ending with a concrete data or algorithmic example that students can manipulate themselves. This narrative approach helps students understand why a concept matters before they invest effort in learning how it works technically.
+
+A central principle in my teaching is to connect theory and practice tightly. For example, when introducing maximum likelihood and M-estimation, I not only present asymptotic results but also show how these estimators arise from optimization problems, how they behave under misspecification, and how they perform on real or simulated data. Students see theoretical results such as consistency and asymptotic normality come to life in simulation studies they implement themselves. This bridges abstract probability with the computational workflow they will use in research and industry.
+
+\section{Teaching Methods and Classroom Practices}
+I strive to design courses that are rigorous, interactive, and inclusive.
+
+\begin{itemize}
+    \item Layered explanations. I typically introduce a concept informally, then formalize it, and finally return to an example. For instance, when teaching central limit theorems or high-dimensional asymptotics, I start with simulation-based visualizations, then move to assumptions and proofs, and then discuss failure modes in heavy-tailed or dependent settings.
+
+\item Active learning. To avoid long stretches of passive listening, I incorporate short in-class activities: quick derivations, think–pair–share questions on model assumptions, or small group discussions about why a particular estimator might fail in a given scenario. These provide real-time feedback on students’ understanding and create space for quieter students to participate.
+
+\item Theory + computation in assignments. Homework sets mix proof-based questions (e.g., verifying regularity conditions, deriving influence functions, analyzing convergence) with coding tasks (implementing distributed gradient methods, bootstrap procedures, or mediation estimators in R or Python). Students learn that careful reasoning and careful implementation are both essential.
+
+\item Open-ended projects. In more advanced courses, I assign projects where students choose a dataset—such as a health, environmental, or social dataset—and must: formulate a question, justify their modeling choices, assess assumptions, and communicate their findings clearly. This prepares them for real research and interdisciplinary collaboration.
+\end{itemize}
+
+Creating a supportive environment is equally important. I work to normalize questions and confusion: I explicitly tell students that struggling with a concept is expected in a rigorous statistics course, and I share strategies for breaking large problems into manageable steps. I emphasize constructive feedback in office hours and grading, aiming to show students how they can improve and not only where they fell short.
+
+\section{Teaching in the Era of genAI}
+
+Large language models and other genAI tools are already affecting how students learn programming, statistics, and data science. I believe our responsibility as educators is to teach students to use these tools critically and responsibly, not to ignore them.
+
+In my courses, I plan to:
+
+\begin{itemize}
+    \item Make limitations visible. I will demonstrate cases where genAI suggestions for code or analysis are subtly incorrect or statistically invalid—e.g., mis-specified models, misuse of p-values, or unjustified causal claims—and ask students to diagnose the problems.
+
+\item Clarify allowed uses. I will design assignments where limited use of genAI (for brainstorming or minor code assistance) is permitted, but where core reasoning, derivations, and interpretation must be the student’s own work.
+
+\item Integrate genAI into evaluation. In advanced classes, I would consider assignments that explicitly ask students to critique an AI-generated analysis using the tools from the course (diagnostics, model checks, robustness analysis), turning genAI from a shortcut into a learning object.
+\end{itemize}
+
+This approach helps students see genAI as a tool to be guided by statistical principles, not as an authority.
+
+\section{Teaching and Mentoring Experience}
+My formal roles include serving as a teaching assistant for:
+
+\begin{itemize}
+    \item Data Science Computing / Computer Skills for Data Science (Ph.D. level).
+I led lab sessions on R and Python programming, simulation studies, and reproducible workflows. I designed exercises where students implemented methods related to my research, such as robust regression or simple distributed algorithms, and then compared them empirically.
+
+\item Asymptotic Statistics (Ph.D. level).
+I ran discussion sections covering convergence concepts, likelihood theory, M-estimation, and bootstrap methods. I prepared solution sketches that highlighted the logical structure of proofs and used office hours to connect measure-theoretic probability with practical inference tasks students encountered in other courses and research.
+
+\item Natural Language Processing (graduate level).
+I helped students understand probabilistic modeling, regularization, and evaluation metrics, and I highlighted how statistical thinking underlies modern deep learning and language models.
+\end{itemize}
+
+Beyond formal courses, I have mentored junior students and collaborators on research projects that led to publications in journals such as JCGS and Statistica Sinica. In supervising these projects, I structure the work into stages: understanding the literature and problem formulation; designing simulations; developing theoretical results; and writing and revising manuscripts. I have found that regular, structured meetings and written milestones (short memos or draft sections) are very effective in helping students move from “following instructions” toward owning a research direction.
+
+Earlier, as an undergraduate, I participated in volunteer teaching programs at high schools in Chongqing and Fujian. There, with students facing large resource and preparation gaps, I saw how small actions—reviewing background material, explicitly acknowledging different starting points, providing concrete learning plans—could change students’ attitudes toward mathematics and science. This experience continues to inform how I support students from diverse backgrounds in university classrooms.
+
+\section{Teaching Interests at Tsinghua}
+
+At Tsinghua’s Department of Statistics and Data Science, I am eager to teach both core courses and specialized electives that align with the department’s strengths at the intersection of statistics, optimization, and AI.
+
+At the undergraduate level, I am prepared to teach:
+
+\begin{itemize}
+    \item Probability and Mathematical Statistics
+
+    \item Regression Analysis and Generalized Linear Models
+
+    \item Introduction to Statistical Learning / Data Science
+
+    \item Statistical Computing (R / Python, reproducible workflows)
+\end{itemize}
+
+At the graduate level, I look forward to teaching and developing courses such as:
+
+\begin{itemize}
+    \item High-Dimensional and Robust Statistics
+
+    \item Distributed and Decentralized Statistical Learning
+
+    \item Causal Inference and Mediation Analysis
+
+    \item Quantile and Composite-Quantile Methods
+
+    \item GenAI-Enhanced Statistical Inference and Modern Statistical Computing
+\end{itemize}
+
+These courses would support students in statistics, data science, and related disciplines (e.g., computer science, engineering, public health), and could be adapted for both theoretical and applied audiences.
+
+\section{Mentoring and Advising Approach}
+
+As an advisor, I aim to meet students where they are, while steadily raising expectations and fostering independence. Different students need different kinds of interaction: some benefit from frequent, hands-on guidance, while others thrive with more autonomy. My approach is to:
+
+\begin{itemize}
+    \item Have regular one-on-one meetings to discuss progress, questions, and long-term goals.
+
+    \item Encourage students to formulate and refine their own research questions, and to present ideas in short written notes or informal talks—skills essential for successful researchers.
+
+    \item Provide clear, detailed feedback on drafts and proposals, helping students see how to sharpen arguments, clarify assumptions, and position their contributions.
+
+    \item Support students in presenting at seminars and conferences and in applying for fellowships or awards.
+\end{itemize}
+
+In all these activities, I see teaching and mentoring as deeply connected to my research: together, they help students acquire the tools and confidence to engage with—and ultimately push forward—the evolving landscape of statistics, data science, and AI.
+\fi
+
+% \clearpage
+% \vskip1.5cm
+%\bibliographystyle{Chicago}
+% \printbibliography%[heading=subbibliography]
+% TODO:END:REFEREE3
+%\fi
+
+\end{document}

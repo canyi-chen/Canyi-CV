@@ -1,0 +1,9 @@
+// {
+//   "latex-workshop.latex.rootFile": "application.tex"
+// }
+{
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.latex.search.rootFiles.include": [
+    "**/application.tex"
+  ]
+}

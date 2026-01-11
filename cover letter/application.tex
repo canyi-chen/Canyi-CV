@@ -1,0 +1,48 @@
+% !TEX program = pdflatex
+% !BIB program = biber
+% !TeX encoding = UTF-8
+% \documentclass[12pt,letter,doublespace]{article}
+% \documentclass[12pt]{article}
+% \documentclass[12pt,letter]{article}
+\documentclass[12pt, american, letterpaper]{article} % uncomment for final version
+% \documentclass[12pt, american]{letter} % uncomment for final version
+% \documentclass[12pt, american, draft]{article} % uncomment for draft version and fast compilation
+% \renewcommand{\thetable}{D.\arabic{table}}
+
+
+\input{subfiles/definition.tex}
+\input{subfiles/presume.tex}
+ 
+\begin{document}
+
+% Cover letter
+% \pagestyle{fancy}
+% \resetpageaux
+\subfile{subfiles/cover}
+
+% Branding statement
+% \pagestyle{fancy}
+% \resetpageaux
+% \subfile{subfiles/branding_statement}
+
+% Research statement
+\pagestyle{fancy}
+\resetpageaux
+\subfile{subfiles/research_statement}
+
+% Teaching statement
+\pagestyle{fancy}
+\resetpageaux
+\subfile{subfiles/teaching_statement}
+
+
+
+
+
+% Template subfile
+% \pagestyle{fancy}
+% \resetpageaux
+% \subfile{template_subfile}
+
+\end{document}
+

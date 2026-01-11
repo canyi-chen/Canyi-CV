@@ -1,0 +1,394 @@
+% \usepackage[left=30mm,right=28mm,top=2cm,bottom=2cm]{geometry}
+% \usepackage[top=0.9in,bottom=0.9in,left=0.9in,right=0.9in]{geometry}
+% Margins standard for research statements
+\usepackage{geometry}
+\geometry{left=1in, right=1in, top=1in, bottom=1in}
+\usepackage{amssymb,%amsthm,
+amsmath,mathrsfs,
+bm,color}
+\usepackage{lineno}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{wrapfig}  % To wrap text around figures
+% \usepackage{booktabs}
+\usepackage{epsfig}
+%\usepackage{natbib}
+ \usepackage{setspace} % this will affect the length
+% \usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+\usepackage{threeparttable}
+\usepackage{fontawesome} % For icons if desired, requires fontawesome package
+
+\usepackage[final]{microtype}
+% \setlength{\topmargin}{-0.25in} \setlength{\oddsidemargin}{0.25in}
+%\setlength{\evensidemargin}{0.25in}
+\usepackage{url}
+%\usepackage{doi}
+
+
+% \baselineskip = 7mm
+% \parskip = 2.5mm
+
+% \textheight= 9in
+% \textwidth = 6.1in
+% \evensidemargin = 0in
+\usepackage{algorithm,algorithmic}
+
+\usepackage{titlesec} % for redefine section
+% Formatting sections
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+% % section
+% \titleformat{\section} % command
+% {\vspace{-0.4 cm}%
+% \centering\large\bfseries} % shape
+% {\thesection.} % sep
+% {0.5 em} % before
+% {\vspace{-0.15 cm}} % after
+
+% % subsection
+% \titleformat{\subsection}
+% {\vspace{-0.4 cm}%
+% \centering\it%
+% }
+% {\thesubsection.} %sep
+% {0.5em}{\vspace{-0.25 cm}}
+
+
+% \newcommand{\csection}[1]
+% {\begin{center}
+% 		\stepcounter{section}
+% 		{\bf\large\arabic{section}. #1}
+% 	\end{center}
+% 	\vspace{-0.15 cm}
+% }
+
+% \newcommand{\scsection}[1]
+% {\begin{center}
+% 		{\bf\large #1}
+% 	\end{center}
+% 	\vspace{-0.15 cm}
+% }
+
+% \newcommand{\csubsection}[1]{
+% 	\vspace{-0.25 cm}
+% 	\begin{center}
+% 		\stepcounter{subsection}
+% 		{\it\arabic{section}.\arabic{subsection}. #1}
+% 	\end{center}
+% 	\vspace{-0.25 cm}
+% }
+
+% \newcommand{\scsubsection}[1]{
+% 	\vspace{-0.25 cm}
+% 	\begin{center}
+% 		\stepcounter{subsection}
+% 		{\it #1}
+% 	\end{center}
+
+ 
+\numberwithin{equation}{section}
+
+
+
+% \bibliographystyle{cheng}
+%\renewcommand\refname{REFERENCE}
+% \setcounter{page}{1}
+
+
+
+\newcommand{\defn}{\stackrel{\mbox{{\tiny def}}}{=}}
+\newcommand{\trans}{^{\mbox{\tiny{T}}}}
+\newtheorem{theo}{\bf Theorem}%[section]
+\newtheorem{lemm}{\bf Lemma}
+%\newtheorem{example}{\bf Example}
+\newtheorem{prop}{\bf Proposition}
+\newtheorem{coro}{\bf Corollary}
+% \newtheorem{exa}{\bf Example}
+
+
+\def\I{{\bf I}}
+\def\s{{\bf s}}
+\def\b{{\bf b}}
+\def\t{{\bf t}}
+\def\x{{\bf x}}
+\def\y{{\bf y}}
+\def\m{{\bf m}}
+\def\z{{\bf z}}
+\def\calA{\mathcal{A}}
+\def\calD{\mathcal{D}}
+\def\calN{\mathcal{N}}
+\def\calS{\mathcal{S}}
+\def\wh{\widehat}
+\def\wt{\widetilde}
+\def\cov{\textrm{cov}}
+% \def\var{\textrm{var}}
+% \def\pr{\textrm{pr}}
+\def\sp{\textrm{span}}
+\def\tr{\mathrm{tr}}
+\def\dist{\textrm{dist}}
+\def\vecl{\textrm{vecl}}
+\def\beqr{\begin{eqnarray}}
+\def\eeqr{\end{eqnarray}}
+\def\beqrs{\begin{eqnarray*}}
+\def\eeqrs{\end{eqnarray*}}
+\def\bb{\mbox{\boldmath$\beta$}}
+\def\ba{\mbox{\boldmath$\alpha$}}
+%\def\be{\mbox{\boldmath$\eta$}}
+\def\bGam{\mbox{\boldmath$\Gamma$}}
+\def\blam{\mbox{\boldmath$\lambda$}}
+\def\bLam{\mbox{\boldmath$\Lambda$}}
+\def\bSig{\mbox{\boldmath$\Sigma$}}
+\def\beps{\mbox{\boldmath$\varepsilon$}}
+\def \hDash{\bot\!\!\!\bot}
+\def\mR{\mathbb{R}}
+\newcommand{\mG}{\mathbb{G}}
+\newcommand{\mP}{\mathbb{P}}
+% \renewcommand{\baselinestretch}{1.75}
+
+%------------In this paper----------------------------------
+%------------For Algorithm--------------------------------
+\renewcommand{\algorithmicrequire}{\textbf{Input:}} % Use Input in the format of Algorithm
+\renewcommand{\algorithmicensure}{\textbf{Output:}} % Use Output in the format of Algorithm
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\bS}{\mathbf{S}}
+\newcommand{\X}{\mathbf{X}}
+\newcommand{\rl}{^{(l)}}
+\newcommand{\iid}{\emph{i.i.d.}}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\trace}{\mathrm{trace}}
+%\newcommand{\lE}{\mathbb{E}}
+\newcommand{\lE}{{\rm{E}}}
+\newcommand{\strans}{^{*\mbox{\tiny{T}}}}
+\newcommand{\Col}{\mathrm{Col}}
+\newcommand{\bP}{\mathbf{P}}
+\newcommand{\bOm}{\mathbf{\Omega}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\bTh}{\mathbf{\Theta}}
+\newcommand{\btheta}{\bm{\theta}}
+\newcommand{\bPhi}{\mathbf{\Phi}}
+\newcommand{\bXi}{\mathbf{\Xi}}
+\newcommand{\bT}{\mathbf{T}}
+\newcommand{\bG}{\mathbf{G}}
+\newcommand{\SIR}{\mathrm{SIR}}
+\newcommand{\CUME}{\mathrm{CUME}}
+\newcommand{\Y}{\mathbf{Y}}
+\newcommand{\Yt}{\widetilde{\Y}}
+\newcommand{\yt}{\widetilde{\y}}
+\newcommand{\ol}{\overline}
+\newcommand{\rmI}{\mathrm{I}}
+\newcommand{\rmd}{\mathrm{d}}
+\newcommand{\bfa}{\mathbf{a}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\tred}{\textcolor{red}}
+\newcommand{\rmv}{{\rm{vec}}}
+\newcommand{\bE}{\mathbf{E}}
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+\def \O{O}
+\def \o{o}
+\newcommand{\B}{\mathbf{B}}
+\newcommand{\bC}{\mathbf{C}}
+\newcommand{\V}{\mathbf{V}}
+\newcommand{\U}{\mathbf{U}}
+\newcommand{\D}{\mathbf{D}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\A}{\mathbf{A}}
+\def\n{\nonumber}
+
+
+%------------In this paper----------------------------------
+\usepackage{url}
+%% code from mathabx.sty and mathabx.dcl
+%% for \widecheck
+\DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
+\DeclareFontShape{U}{mathx}{m}{n}{
+	<5> <6> <7> <8> <9> <10>
+	<10.95> <12> <14.4> <17.28> <20.74> <24.88>
+	mathx10
+}{}
+\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
+\DeclareFontSubstitution{U}{mathx}{m}{n}
+\DeclareMathAccent{\widecheck}{0}{mathx}{"71}
+\DeclareMathAccent{\wideparen}{0}{mathx}{"75}
+
+\def\cs#1{\texttt{\char`\\#1}}
+% - widecheck
+
+% Define
+
+\newcommand{\cl}{\mathcal{l}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\tcL}{\widetilde{\cL}}
+\def\sign{\textrm{sign}}
+% \newcommand{\bbeta}{\bm{\beta}}
+\newcommand{\bbeta}{\bm{\zeta}}
+\newcommand{\bvbeta}{\widecheck{\bbeta}}
+\newcommand{\bhbeta}{\widehat{\bbeta}}
+\newcommand{\btbeta}{\widetilde{\bbeta}}
+\newcommand{\bhSig}{\widehat{\bSig}}
+\newcommand{\bvSig}{\widecheck{\bSig}}
+\newcommand{\hB}{\widehat{\B}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\argmin}{\mathop{\rm arg\min}}
+\newcommand{\argmax}{\mathop{\rm arg\max}}
+\newcommand{\supp}{\mathrm{supp}}
+\def\Z{{\bf Z}}
+\def\vz{{\check{\z}}}
+\def\hz{{\hat{\z}}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pool}{\mathrm{pool}}
+%\newtheorem{remark}{\bf Remark}
+% norm
+\newcommand{\norm}[1]{\Vert#1\Vert}
+\newcommand{\Norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\inner}[2]{\langle #1, #2 \rangle}
+\newcommand{\Inner}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\abs}[1]{\vert#1\vert}
+\newcommand{\Abs}[1]{\left\vert#1\right\vert}
+
+
+\newcommand*\from{\colon}
+\newcommand{\svt}{\mathcal{T}}
+\newcommand{\w}{\mathbf{w}}
+\newcommand{\W}{\mathbf{W}}
+\newcommand{\Bt}{\B_\ast}
+\newcommand{\rank}{\textrm{rank}}
+
+% OnlineEE
+%\newcommand{\E}{\mathbb{E}}
+\def\pr{\mathrm{P}}
+\newcommand{\bzeros}{\bm{0}}
+\newcommand{\bbetaT}{{\bbeta^\ast}}
+\newcommand{\bJ}{\mathbf{J}}
+%\def\var{\mathrm{Var}}
+\newcommand{\Ds}{\D^\ast}
+\newcommand{\bshbeta}{\bhbeta^\ast}
+\newcommand{\Xa}{\mathbb{X}}
+
+% DistributedCompositeQR
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\bdelta}{\bm{\delta}}
+\newcommand{\bDelta}{\bm{\Delta}}
+\newcommand{\balpha}{\bm{\alpha}}
+\newcommand{\balphaT}{\bm{\alpha}^\ast}
+\newcommand{\bhalpha}{\widehat{\balpha}}
+
+\usepackage{caption}
+\newcommand{\bmu}{\bm{\mu}}
+\newcommand{\bkappa}{\bm{\kappa}}
+\newcommand{\btau}{\bm{\tau}}
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\br}{\bm{r}}
+
+
+
+\usepackage{tikz}
+% \definecolor{offwhite}{HTML}{F2EDED}
+\tikzset{> = stealth,
+    hidden/.style = {
+        draw = black,
+        shape = circle,
+        inner sep = 1pt
+    }
+}
+
+\usepackage[all,import]{xy}
+
+% \def\spacingset#1{\renewcommand{\baselinestretch}%
+% 		{#1}\small\normalsize} 
+
+\newcommand{\QNDE}{\mathrm{qNDE}}
+
+\newcommand{\QNIE}{\mathrm{qNIE}}
+\newcommand{\QTE}{\mathrm{qTE}}
+
+
+%assumptions
+\usepackage{hyperref}
+% \hypersetup{
+%     colorlinks = true,
+%     linkcolor = blue
+%     }
+\usepackage{cleveref}
+
+\crefname{theo}{Theorem}{Theorems}
+\crefname{lemm}{Lemma}{Lemmas}
+\crefname{coro}{Corollary}{Corollaries}
+\crefname{prop}{Proposition}{Propositions}
+
+
+% \newlist{assumptions}{enumerate}{10}
+% \setlist[assumptions]{label*=(A\arabic*)}
+% \crefname{assumptionsi}{assumption}{assumptions}
+% \Crefname{assumptionsi}{Assumption}{Assumptions}
+% \crefrangeformat{assumptionsi}{assumptions~#3#1#4--#5#2#6}
+% \crefmultiformat{assumptionsi}%
+% {assumptions~#2#1#3}{ and~#2#1#3}{, #2#1#3}{ and~#2#1#3}
+% \crefrangemultiformat{assumptionsi}%
+% {assumptions~#3#1#4--#5#2#6}{ and~#3#1#4--#5#2#6)}{, #3#1#4--#5#2#6}{ and~#3#1#4--#5#2#6}
+
+% \Crefrangeformat{assumptionsi}{Assumptions~#3#1#4--#5#2#6}
+% \Crefmultiformat{assumptionsi}%
+% {Assumptions~#2#1#3}{ and~#2#1#3}{, #2#1#3}{ and~#2#1#3}
+% \Crefrangemultiformat{assumptionsi}%
+% {Assumptions~#3#1#4--#5#2#6}{ and~#3#1#4--#5#2#6)}{, #3#1#4--#5#2#6}{ and~#3#1#4--#5#2#6}
+
+\Crefname{condition}{Condition}{Conditions}
+
+\newlist{conditions}{enumerate}{10}
+\setlist[conditions]{label*=(C\arabic*)}
+\crefname{conditionsi}{condition}{conditions}
+\Crefname{conditionsi}{Condition}{Conditions}
+\crefrangeformat{conditionsi}{conditions~#3#1#4--#5#2#6}
+\crefmultiformat{conditionsi}%
+{conditions~#2#1#3}{ and~#2#1#3}{, #2#1#3}{ and~#2#1#3}
+\crefrangemultiformat{conditionsi}%
+{conditions~#3#1#4--#5#2#6}{ and~#3#1#4--#5#2#6)}{, #3#1#4--#5#2#6}{ and~#3#1#4--#5#2#6}
+
+\Crefrangeformat{conditionsi}{Conditions~#3#1#4--#5#2#6}
+\Crefmultiformat{conditionsi}%
+{Conditions~#2#1#3}{ and~#2#1#3}{, #2#1#3}{ and~#2#1#3}
+\Crefrangemultiformat{conditionsi}%
+{Conditions~#3#1#4--#5#2#6}{ and~#3#1#4--#5#2#6)}{, #3#1#4--#5#2#6}{ and~#3#1#4--#5#2#6}
+
+\newcommand{\calL}{\mathcal{L}}
+
+% \newcommand{\E}{E}
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\bF}{\mathbf{F}}
+\newcommand{\bV}{\mathbf{V}}
+\newcommand{\bg}{\mathbf{g}}
+\newcommand{\var}{\textrm{var}}
+
+\newcommand{\todistribution}{\xrightarrow{\text{d}}}
+\newcommand{\toprobability}{\xrightarrow{\text{P}}}
+\newcommand{\toas}{\xrightarrow{\text{a.s.}}}
+
+\newcommand{\boottodistribution}{\stackrel{\text{d}^\ast}{\rightsquigarrow}}
+\newcommand{\boottoprobability}{\stackrel{\text{P}^\ast}{\rightsquigarrow}}
+
+
+
+\newcommand{\bzero}{\bm{0}}
+\newcommand{\mZ}{\mathbb{Z}}
+\newcommand{\bPsi}{\bm{\Psi}}
+
+
+
+% \usepackage[toc,page,header]{appendix}
+% \usepackage{minitoc}
+
+% % Make the "Part I" text invisible
+% \renewcommand \thepart{}
+% \renewcommand \partname{}
+
+
+
+\newcommand{\LT}{\mathrm{LT}}
+\newcommand{\calT}{\mathcal{T}}
+
+ % \usepackage{adjustbox}
+\newcommand{\AB}{\text{ABoot}}

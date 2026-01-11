@@ -1,0 +1,296 @@
+% \graphicspath{{../article/figs/}}
+% \renewcommand{\thefigure}{R.\arabic{figure}}
+\usepackage[export]{adjustbox}
+
+\usepackage{xcolor}
+%\definecolor{blue}{named}{black}  % Now \color{black} is actually black
+
+\usepackage{subfiles}      % for convenient nested files
+\usepackage{standalone}    % allows standalone sub-documents
+
+%\bibpunct{(}{)}{;}{a}{,}{,}
+\setlength{\textwidth}{6.2in}%
+\setlength{\textheight}{8.75in}%
+\setlength{\topmargin}{-0.25in}%
+\setlength{\oddsidemargin}{0.25in}%
+\setlength{\evensidemargin}{0.25in}%
+
+
+%% FONTS
+%\usepackage{textcomp}
+%\usepackage{newtxtext}
+% \usepackage[smallerops]{newtxmath}
+
+
+% for response env
+\usepackage[final]{microtype}
+\usepackage{xparse,tcolorbox}
+\newenvironment{reviewer-comment}{}{}
+\tcbuselibrary{skins}
+\tcolorboxenvironment{reviewer-comment}{empty,
+  left = 1em, top = 1ex, bottom = 1ex,
+  borderline west = {2pt} {0pt} {black!20},
+}
+\ExplSyntaxOn
+\NewDocumentEnvironment {response} { +m O{black!20} } {
+  \IfValueT {#1} {
+    \begin{reviewer-comment}%
+      %\setlength\parindent{2em}
+      \noindent%
+      % \ttfamily 
+      \it% 
+      #1
+    \end{reviewer-comment}
+  }
+  \smallskip
+  \par\noindent\ignorespaces{{\bigskip\noindent\underline{\bf Reply}:}}
+} { \bigskip\bigskip\par }
+\ExplSyntaxOff
+
+% reset page
+\newcounter{pageaux}
+\def\currentauxref{PAGEAUX1}
+\makeatletter
+\newcommand{\resetpageaux}{%
+  \clearpage
+  \edef\@currentlabel{\thepageaux}\label{\currentauxref}%
+  \xdef\currentauxref{PAGEAUX\thepage}%
+  \setcounter{pageaux}{0}}
+\AtEndDvi{\edef\@currentlabel{\thepageaux}\label{\currentauxref}}
+\makeatother
+
+% https://latex.org/forum/viewtopic.php?t=33181
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[C]{\stepcounter{pageaux}{\footnotesize\itshape\textcolor{gray}{Page \thepageaux\ of 
+ \hypersetup{hidelinks} % Disable hyperlinks temporarily 
+ \ref{\currentauxref}
+ \hypersetup{linkcolor=blue} % Re-enable hyperlinks with default color
+ }}}
+\fancyhead[L,C,R]{}% 
+
+%% for biblatex
+%\usepackage[backend=biber,style= apa6,dashed=false,url=false,isbn=false,defernumbers=true,refsection=section,natbib=true]{biblatex}
+\usepackage[american]{babel}
+\usepackage[babel]{csquotes}
+% \iffalse
+\usepackage[%bibstyle=publist,plauthorhandling=highlight
+backend=biber, natbib, bibstyle=numeric,%,style=nature, % nature
+doi=true,maxbibnames=99,giveninits=true,uniquename=false,
+sorting=ydnt,sortcites=true,defernumbers=true
+% sorting=nymdt
+%sorting=nymdt%https://tex.stackexchange.com/questions/51434/biblatex-citation-order
+]{biblatex}
+% \fi
+% \usepackage[%authordate, 
+% style=numeric,
+% uniquename=false,natbib,url=false,isbn=false,backend=biber,refsection=section,giveninits=true,%https://tex.stackexchange.com/questions/478880/cite-with-authors-initial-in-biblatex-chicago-without-rewriting-bibliography
+% maxcitenames=2%https://tex.stackexchange.com/questions/69028/set-limit-to-one-author-when-using-et-al-in-biblatex
+% ]{biblatex}%-chicago}  
+
+
+
+\renewcommand{\cite}{\citet}
+\AtEveryBibitem{
+  \clearfield{month}
+} % remove month % <- by ccy
+
+
+\usepackage{url}
+
+%%% --- The following two lines are what needs to be added --- %%%
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+
+
+%\bibliography{ref.bib}
+\bibliography{../paper.bib}
+\bibliography{../manuscript_in_review.bib}
+\bibliography{../manuscript_in_preparation.bib}
+\bibliography{../working_paper.bib}
+% \bibliography{../article/QMA_refs_zotero.bib}
+
+\AtBeginBibliography{\footnotesize}
+
+
+\makeatletter
+\defbibenvironment{bibliography}
+{\list{\printtext[labelnumberwidth]{%
+    \printfield{prefixnumber}%
+    \printfield{labelnumber}}}
+{\setlength{\bibhang}{0pt}%
+% \setlength{\leftmargin}{7.5em}%
+\setlength{\itemindent}{0pt}%
+\setlength{\itemsep}{\bibitemsep}%
+\setlength{\parsep}{\bibparsep}}}
+{\endlist}
+{\item}
+\makeatother
+
+\def\makenamesetup{%
+  \def\bibnamedelima{~}%
+  \def\bibnamedelimb{ }%
+  \def\bibnamedelimc{ }%
+  \def\bibnamedelimd{ }%
+  \def\bibnamedelimi{ }%
+  \def\bibinitperiod{.}%
+  \def\bibinitdelim{~}%
+  \def\bibinithyphendelim{.-}}
+\newcommand*{\makename}[2]{\begingroup\makenamesetup\xdef#1{#2}\endgroup}
+
+\newcommand*{\boldname}[3]{%
+  \def\lastname{#1}%
+  \def\firstname{#2}%
+  \def\firstinit{#3}}
+\boldname{}{}{}
+
+% Patch new definitions
+\renewcommand{\mkbibnamegiven}[1]{%
+  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+  {\mkbibbold{#1}}{#1}%
+}
+
+\renewcommand{\mkbibnamefamily}[1]{%
+  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+  {\mkbibbold{#1}}{#1}%
+}
+
+\boldname{Chen}{Canyi}{C.}
+
+\renewcommand*{\mkbibnamegiven}[1]{
+\ifitemannotation{highlight}
+{\textbf{#1}}
+{#1}}
+\renewcommand*{\mkbibnamefamily}[1]{
+\ifitemannotation{highlight}
+  {\textbf{#1}}
+  {#1}%
+\ifitemannotation{first}
+  {\textsuperscript{*}}
+  {}%
+\ifitemannotation{corresponding}
+  {$^\dagger$}
+  {}%
+}%%
+
+% --------------------------------------------------- %
+% \newcommand*{\boldname}[3]{%
+%   \def\lastname{#1}%
+%   \def\firstname{#2}%
+%   \def\firstinit{#3}}
+% \boldname{}{}{}
+
+% % Patch new definitions
+% \renewcommand{\mkbibnamegiven}[1]{%
+%   \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+%   {\mkbibbold{#1}}{#1}%
+% }
+
+% \renewcommand{\mkbibnamefamily}[1]{%
+%   \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+%   {\mkbibbold{#1}}{#1}%
+% }
+
+% \boldname{Chen}{Canyi}{C.}
+
+% \renewcommand*{\mkbibnamegiven}[1]{
+% \ifitemannotation{highlight}
+% {\textbf{#1}}
+% {#1}}
+% \renewcommand*{\mkbibnamefamily}[1]{
+% \ifitemannotation{highlight}
+%   {\textbf{#1}}
+%   {#1}%
+% \ifitemannotation{first}
+%   {\textsuperscript{*}}
+%   {}%
+% \ifitemannotation{corresponding}
+%   {$^\dagger$}
+%   {}%
+% }%%
+% --------------------------------------------------- %
+
+% \usepackage{titlesec} % for redefine section
+% \usepackage[explicit]{titlesec}
+%%% section
+%\titleformat{\section} % command
+%{%\vspace{-0.63 cm}%
+%\centering\bfseries} % shape
+%{\thesection.} % sep
+%{%0.5 em
+%} % before
+%{%\vspace{-0.15 cm}
+%} % after
+
+
+% \titleformat{\subsection}[hang]
+%   {\normalfont\large\bfseries}  % font format
+%   {\thesubsection}{1em}         % label spacing
+%   {}                            % before code
+%   []                            % after code
+
+\usepackage{sectsty}
+%\allsectionsfont{\fontsize{12}{12}\selectfont\sffamily\bfseries\centering}
+\allsectionsfont{\fontsize{12}{12}\selectfont\centering}
+
+\subsectionfont{\raggedright}
+
+
+
+
+
+
+% --------------------------------------------------- %
+% \newtheorem{theorem}{Theorem}
+% \newtheorem{lemma}{Lemma}
+% \newtheorem{prop}{Proposition}
+\baselineskip = 7mm
+\parskip = 2.5mm
+
+%\input{definitionchen}
+\usepackage{csquotes}
+\SetBlockEnvironment{quotation}
+
+%\AtBeginEnvironment{quotation}{\fontsize{11}{14pt plus.8pt minus.6pt}\selectfont}
+\AtBeginEnvironment{quotation}{\fontsize{11}{14pt plus.8pt minus.6pt}\selectfont%
+%\doublespacing
+}
+
+%\renewcommand{\mkbegdispquote}[2]{\fontsize{11}{14pt plus.8pt minus.6pt}\selectfont}
+
+\definecolor{formalshade}{rgb}{0.95,0.95,1}
+\definecolor{darkblue}{rgb}{0.0, 0.0, 0.55}
+%\colorlet{darkblue}{blue}
+
+\tcbuselibrary{skins,breakable}
+\newtcolorbox{quotation_colored}{
+    enhanced,
+    breakable,
+    center,
+    parbox = false,
+    width=0.88\linewidth,
+    boxrule=0pt,
+    frame hidden,
+%    borderline west={2pt}{0pt}{darkblue},
+%    borderline east={2pt}{0pt}{darkblue},
+    borderline north={1pt}{0pt}{darkblue},
+    borderline south={1pt}{0pt}{darkblue},
+    colback=formalshade,
+    sharp corners, 
+    fontupper=\fontsize{12}{14pt plus.8pt minus.6pt}\selectfont, fontlower=\fontsize{12}{14pt plus.8pt minus.6pt}\selectfont
+    %fontupper=\itshape
+    }
+
+
+
+% =================== comments =============== %
+
+
+\def\calN{\mathcal{N}}
+\def\calS{\mathcal{S}}
+%\usepackage{enumerate} 
+%\captionsetup{font = footnotesize}
+
+
+\setlength{\parindent}{0pt} 

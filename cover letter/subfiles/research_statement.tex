@@ -1,0 +1,318 @@
+% !TEX program = pdflatex
+% !BIB program = biber
+% !TeX encoding = UTF-8
+% !TeX root = ../application.tex
+\documentclass[../application.tex]{subfiles}
+
+\begin{document}
+
+
+% TODO:BEGIN:REFEREE3
+%\iffalse
+\newpage
+\pagestyle{fancy}
+% \setcounter{page}{1}
+\resetpageaux
+\setcounter{subsection}{0}
+
+
+% --- Header ---
+\begin{center}
+    {\Large \textbf{Research Statement}} \\
+    \vspace{0.2cm}
+    % \textbf{Canyi Chen} \\
+    % \textit{Distributed Learning, Causal Mediation Analytics, and GenAI-Enhanced Inference}
+\end{center}
+
+\vspace{0.3cm}
+
+\noindent
+{\textbf{Keywords}: Distributed Learning, Causal Mediation Analytics, and GenAI-Enhanced Inference.}
+
+% --- Executive Summary / General Motivation  ---
+My research is motivated by the inherent challenges of modern data infrastructures: datasets are massive and geographically distributed, dependence structures are complex, and increasingly, data are generated or transformed by opaque AI ``black boxes.'' Classical statistical methods—developed for centralized and transparent environments—often break down under these conditions. \textit{I develop statistical theory and algorithms that enable reliable inference in large-scale, decentralized, and AI-augmented systems.}
+
+This research agenda has resulted in \textit{over 30 manuscripts}, including \textit{16 peer-reviewed publications} in leading journals such as \textit{JASA}, \textit{JCGS}, and \textit{Statistica Sinica}. My work is organized around three interconnected themes that bridge foundational statistical theory with modern computational environments:
+\begin{enumerate}[noitemsep]
+\item \textit{Efficient Distributed Learning:} Addressing communication, statistical efficiency, and computation constraints in federated and multi-site massive data settings.
+\item \textit{Calibrated Mediation Analytics:} Developing valid methodologies for testing causal pathways under the composite null and controlling FDR within high-dimensional, complex dependence structures.
+\item \textit{GenAI-Enhanced Inference:} Establishing statistical safeguards and enhancement principles for inference using synthetic data and LLM-driven workflows.
+\end{enumerate}
+
+
+% --- Section 1: Distributed Learning (Past/Current Work) ---
+\subsection*{R.1 Efficient Distributed Learning in Heterogeneous Environments}
+Modern collaborations in health and technology often collect data across multiple institutions where centralizing data is impossible due to privacy or bandwidth constraints. The fundamental challenge is designing estimators that approach the efficiency of centralized ``oracle" procedures while minimizing communication and scaling to massive datasets.
+
+\textit{Communication-Efficient Estimation via Linearization and Quadratic Approximation.} A key insight of my work is that naive averaging in distributed networks introduces bias when local sample sizes are scarce. The native meta approach is hence not optimal in large systems. In work published in \textit{JASA} and \textit{Statistica Sinica}, I developed Linearization and Quadratic Approximation strategies that surrogate the impossible full-sample loss with feasible approximations. I demonstrated that, under mild regularity conditions, a finite round of communication can recover the first-order efficiency of a centralized estimator. See related works in   \citep{chen2024SparseClassification,chen2024Robust1bit,chen2022DistributedDecodingHeterogeneous,chen2022DistributedEstimationHeterogeneous,he2024DebiasedDistributedQuantile,chen2022RobustMultiTask,zhang2025DC,chen2022DistributedEstimationGap,Zhu2025ImprovedDC}.
+
+\textit{Robustness to Adversarial Contamination.} Beyond efficiency, distributed systems are vulnerable to ``Byzantine" failures or data corruption at specific nodes. Addressing ``doubly nonsmooth" objectives, I introduced smoothing strategies for composite quantile regression and support vector machines. This approach, detailed in \textit{JCGS}, \textit{Statistica Sinica} and {\it JASA}, enables gradient-based algorithms that achieve linear convergence and finite-sample error guarantees even under heavy tails, outliers, and Byzantine attacks. See related works in \citep{chen2022CommunicationEfficientDistributedSupportVectorMachine,chen2024DistributedSparseComposite,qiao2025RobustEfficientSparse,chen2024ByzantinerobustEfficientDistributeda,qiao2024,qiao2024FastRobustLowRanka}.
+
+% --- Section 2: Mediation Analysis (Past/Current Work) ---
+\subsection*{R.2 Calibrated Testing in High-Dimensional Mediation}
+While R.1 focuses on \textit{how} to learn efficiently from data, R.2 investigates \textit{what} can be inferred about underlying causal mechanisms. In modern scientific studies, such as those involving omics or digital biomarkers, discovering mediators within the directed acyclic graphs is a central objective. However, classical testing procedures are often overly conservative when addressing the \textit{composite null} problem, defined as $H_{0j}: \alpha_j \beta_j = 0$, because failure of either the exposure–mediator or mediator–outcome pathway implies the absence of mediation. Moreover, strong dependence among candidate mediators further undermines the validity of standard FDR control procedures.
+
+\textit{High-Sensitivity Joint Significance Testing.} I have developed calibrated testing procedures that explicitly respect the composite null structure while maintaining computational efficiency. By employing cross-fitting strategies, these methods remain valid under weak signals and thereby achieve greater power than existing approaches. I further introduced new FDR control procedures that account for mediator dependence, ensuring accurate FDR control in high-dimensional, general dependence settings. These works are currently under review at \textit{Biometrika}. See related works in  \citep{chen2025FDR,chen2025SJS,chen2025DCseq,kundu2025multiMediators,chen2025renewableJS,chen2024FDR}.
+
+\textit{Copula and Quantile-Based Frameworks.} To handle the non-Gaussian data commonly encountered in digital health applications, I developed copula-based frameworks that decouple marginal distributions from dependence structures. This allows the modeling of heavy-tailed and skewed data, and extends mediation analysis beyond mean effects to quantile-level inference, thereby capturing heterogeneous mediation effects across the outcome distribution. These results are published in the \textit{Canadian Journal of Statistics} or are under review at \textit{Statistica Sinica}. See related works in  \citep{hao2023ClassDirectedAcyclic,chen2025CoSEM,Chen2024QuantileMediation}.
+
+
+% --- Placeholder for Figure [cite: 1160] ---
+% \begin{figure}[h]
+%    \centering
+%    \includegraphics[width=0.8\textwidth]{your_framework_diagram.png}
+%    \caption{\textbf{Unified Framework.} Illustration of how distributed learning (R.1) enables scalable mediation analysis (R.2), which is further augmented by synthetic data integration (R.3).}
+% \end{figure}
+
+% --- Section 3: Vision / Future Work (The "Hourglass" Bottom) [cite: 1106] ---
+\subsection*{R.3 Vision: Statistical Safeguards and Enhancements for the GenAI Era}
+While my previous work has optimized inference for distributed and naturally occurring data, the next frontier lies in understanding and utilizing data generated by opaque algorithms. LLMs and other generative systems are increasingly used to produce synthetic data and predictive representations, yet they lack inherent uncertainty quantification and may introduce subtle biases. \textit{My long-term vision is to establish the statistical foundations that enable trustworthy and effective use of GenAI in inference.}
+
+\textit{Stopping Rules and Stability.} In my first work, I established statistically principled stopping rules for GenAI training based on sequential monitoring. These rules prevent overfitting in high-capacity models and provide safeguards when generative models are integrated into high-stakes policy or decision-making pipelines. This work is published in \textit{JASA}  \citep{he2024GoodnessOfFitAssessment}. 
+
+\textit{Principled Integration of Synthetic Data.} A key question guiding my future research is: \textit{Under what conditions can synthetic data enhance classical inference without sacrificing validity?} I am developing two-step estimators that leverage synthetic data either as control variates or for informative initialization. By treating synthetic outputs as auxiliary statistics, these methods deliver efficiency gains while rigorously preserving asymptotic normality and valid inferential guarantees \citep{chen2024dagif}. 
+
+\textit{The Unified Framework.} Ultimately, I aim to connect these three research directions: building distributed systems (R.1) that support complex causal discovery (R.2), and augmenting them with statistically safeguarded generative modeling (R.3). This integrative vision aligns with the interdisciplinary strengths of Tsinghua's Department of Statistics and Data Science, where I look forward to collaborating across optimization, causal inference, and artificial intelligence to advance the foundations of trustworthy data science.
+
+
+% --- References (Condensed for space, usually valid to just cite numbers if CV is attached, but a short list helps) ---
+% \vspace{0.5cm}
+% \noindent \small{\textbf{Selected References:} [1] C. Chen et al., \textit{JASA} (2025). [2] C. Chen et al., \textit{Statistica Sinica} (2023). [3] N. Qiao, C. Chen et al., \textit{Stats \& Comp} (2025). [4] C. Chen et al., \textit{Biometrika} (In Review).}
+
+
+%\centerline{\bf Point-by-Point Responses to Referee Two}
+%\subsection*{Point-by-Point Responses to Referee Two}
+% \subsection*{%
+%   {\Large\bf Research Statement}
+% }
+%\vspace{1cm}
+
+% \subsection{x}
+% My research directions are mostly driven by resourceful modern data infrastructures, including large-scale data collections, complex data dependence structures, and immersive computing capacity.
+% (i) The large scalability of the data collection motivates me to develop efficient statistical learning approaches for distributed stored datasets over different locations. 
+% % general topology, statistical/computational efficiency trade-off
+% (ii) The complex dependence inspires me to explore the mediation pathway analysis for understanding the underlying mechanisms. 
+% % composite null and streaming data
+% (iii) The immersive computing capacity makes synthetic data generation comes at a low cost, which encourages me to investigate how to leverage synthetic data to boost the inference efficiency. 
+% % testing the sufficiency and then use the synthetic data to enhance the power.
+
+
+\iffalse
+My research is motivated by \emph{resourceful modern data infrastructures}: massive and geographically distributed datasets, complex dependence structures, and increasingly powerful but opaque AI systems. Classical statistical methods, which often assume centralized storage, simple dependence, and transparent models, are not designed for these environments. I develop statistical theory, methodology, and algorithms that enable reliable inference in large-scale, decentralized, and AI-augmented systems.
+
+My work is organized around three interconnected themes:
+\begin{enumerate}
+  \item \textbf{R.1 Efficient distributed learning} for large-scale, multi-site data under communication, privacy, and robustness constraints;
+  \item \textbf{R.2 Calibrated testing procedures for mediation analysis} under complex dependence structures and high-dimensional mediators;
+  \item \textbf{R.3 genAI-enhanced inference}, which leverages black-box predictive models and synthetic data in a statistically principled way.
+\end{enumerate}
+To date, this agenda has led to \textbf{30 manuscripts}, including \textbf{16 peer-reviewed publications} in leading statistics journals such as \emph{JASA}, \emph{JCGS}, and \emph{Statistica Sinica}, with additional work under review in \emph{Biometrika} and \emph{Biometrics}. Across these projects, I aim to build a coherent framework where \emph{distributed learning, causal pathway analysis, and genAI-enhanced inference} reinforce one another.
+
+\vspace{0.3cm}
+\noindent\textbf{R.1 Efficient Distributed Learning}
+
+Modern collaborations in health, environment, and technology often collect data at multiple institutions or devices. Privacy regulations, bandwidth limits, and institutional policies make it difficult or impossible to centralize these data. This raises fundamental questions: how to design \emph{communication-efficient} estimators that approach centralized performance, how to remain \emph{robust} to heterogeneity and adversarial contamination, and how to understand the \emph{statistical--computational trade-offs} in such systems.
+
+A first line of my work studies \emph{divide-and-conquer} estimators that aggregate local estimates to approximate a centralized oracle. A key insight is that naive averaging can be biased when local sample sizes, regularization, or model misspecification differ across nodes. I develop debiasing strategies that correct these discrepancies and show that, under mild regularity conditions, a single round of communication can recover the first-order efficiency of the centralized estimator while still admitting valid uncertainty quantification. This provides a principled recipe for one-shot distributed procedures that are both statistically efficient and communication-light.
+
+A second line addresses \emph{doubly nonsmooth objectives} such as composite quantile regression with $\ell_1$ penalties, which are important for robust and high-dimensional learning but challenging for decentralized optimization. Classical methods typically achieve only sublinear convergence. In my work on decentralized surrogate composite quantile regression, we introduce local smoothing strategies that preserve robustness while enabling gradient-based algorithms with \emph{linear convergence} and finite-sample error guarantees under heavy tails and outliers. This yields scalable and robust sparse learning over peer-to-peer networks without a central coordinator.
+
+A third line studies distributed learning under \emph{heterogeneity and multi-task structure}, where each node corresponds to a related but distinct population. By explicitly modeling cross-node similarity and borrowing strength across tasks, my methods improve efficiency relative to fitting independent models at each site, maintain robustness to corrupted nodes, and provide interpretable measures of similarity and divergence.
+
+\emph{Future work in R.1.} I plan to extend these ideas in three directions: (i) \emph{federated and privacy-aware inference}, integrating communication budgets and formal privacy constraints into optimality theory; (ii) \emph{adaptive and asynchronous algorithms} that handle stragglers and dynamic network topologies; and (iii) \emph{distributed causal and mediation inference}, linking R.1 with R.2 so that mediation and pathway analysis can operate on federated data held by multiple institutions.
+
+\vspace{0.3cm}
+\noindent\textbf{R.2 Calibrated Testing in Mediation Analysis}
+
+Beyond association, many scientific questions seek to understand \emph{how} an exposure affects an outcome. Mediation analysis decomposes total effects into pathways operating through intermediate variables. Modern studies often involve high-dimensional mediators (omics, imaging, digital biomarkers) with strong dependence and non-Gaussian features, where classical mediation tools can be misleading.
+
+A core challenge is the \emph{composite null} for each mediator $M_j$,
+\[
+H_{0j}: \alpha_j \beta_j = 0,
+\]
+which corresponds to the union of submodels ($\alpha_j = 0$ or $\beta_j = 0$). Standard asymptotic tools, which are designed for simple nulls, often yield inflated type I error or overly conservative tests in this setting. My work develops \emph{calibrated testing procedures} that respect the composite null and scale to thousands of mediators.
+
+One component focuses on constructing test statistics and resampling schemes that remain valid under dependence and weak signals, yielding accurate $p$-values for the product structure $\alpha_j \beta_j$. I design high-sensitivity joint-significance and max-type tests that control family-wise error or false discovery rate while retaining power for sparse signals. Another component introduces \emph{copula-based} and \emph{quantile} mediation frameworks. By separating marginal distributions from dependence via copulas, we can model heavy tails and skewness, incorporate network or spatial structure among mediators, and move beyond mean effects to \emph{quantile-level mediation}, which captures heterogeneous pathways across the outcome distribution.
+
+I also work on \emph{streaming mediation inference}, where test statistics and calibration are updated as data accrue. This enables online monitoring of mediation pathways in mobile health and digital intervention studies, supports early stopping rules for expensive data collection, and aligns naturally with the distributed settings studied in R.1.
+
+\emph{Future work in R.2.} I plan to extend mediation methods to nonlinear and dynamic systems (longitudinal and networked data), to multi-exposure and multi-omics contexts where pathways form cascades, and to federated environments where mediators and outcomes are stored across institutions. These developments will provide mechanism-based insight in genomics, environmental epidemiology, and digital health.
+
+\vspace{0.3cm}
+\noindent\textbf{R.3 genAI-Enhanced Inference: Black-Box Predictors and Synthetic Data}
+
+Generative models and large language models (LLMs) have made \emph{black-box prediction} and \emph{synthetic data generation} routine in applied work. They excel at capturing complex patterns but are often opaque and do not directly yield valid inference. A central question is:
+
+\begin{quote}
+When, and how, can black-box predictions or synthetic data be used to improve classical statistical inference \emph{without compromising validity}?
+\end{quote}
+
+My research tackles this question in two complementary components. First, I develop \emph{diagnostics and tests} to evaluate whether synthetic data and black-box outputs preserve the structures needed for inference on target parameters. This includes testing whether synthetic samples preserve relevant distributional and dependence features, and assessing whether black-box risk scores or embeddings maintain conditional relationships required by downstream analyses. These tools act as \emph{gatekeepers} that determine when genAI components are adequate for a given inferential goal.
+
+Second, once adequacy is established, I design procedures that \emph{fuse real and synthetic information} to gain efficiency. Examples include two-step estimators that use synthetic data for informative initialization or control variates and semi-supervised frameworks where black-box predictions reduce variance or enhance power for detecting weak signals. A unifying theme is to treat synthetic data and black-box outputs as \emph{auxiliary statistics}, carefully integrated so that asymptotic normality and valid confidence intervals are preserved.
+
+In ongoing work, I propose \emph{statistically principled stopping rules} for genAI training and fine-tuning, drawing on sequential monitoring and information-theoretic ideas. These rules aim to prevent overfitting and instability in high-capacity generative models, quantify uncertainty in evaluation metrics derived from LLMs, and provide safeguards when genAI is embedded in sensitive scientific or policy pipelines.
+
+\emph{Future work in R.3.} I plan to develop frameworks for inference based on LLM-generated features, summaries, or pseudo-observations; study robustness under distributional shift when AI systems are updated over time; and release open-source \texttt{R} packages (building on my existing \texttt{SIT}, \texttt{abima}, and \texttt{MarginalMaxTest}) implementing genAI-enhanced inference methods.
+
+\vspace{0.3cm}
+\noindent\textbf{Vision and Fit}
+
+Across R.1--R.3, my long-term vision is to establish a unified statistical framework for \textbf{trustworthy distributed learning, causal mediation, and genAI-enhanced inference}. Concretely, over the next decade I aim to: develop optimality theory and algorithms for privacy- and communication-constrained distributed inference; build scalable mediation and pathway tools for complex multi-omics and digital-health data; and design statistically principled interfaces between classical inference and LLM-based systems, including diagnostics, calibration, and real--synthetic fusion.
+
+These efforts align closely with the Department of Statistics and Data Science at Tsinghua University, which sits at the intersection of optimization, statistics, and artificial intelligence. By combining rigorous theory, scalable algorithms, and open-source software, I aim to contribute to Tsinghua’s leadership in foundational statistics and its applications to large-scale data science and AI.
+
+
+\fi
+
+\iffalse
+My research directions are mostly driven by resourceful modern data infrastructures, including large-scale data collections, complex data dependence structures, and immersive computing capacity. These emerging infrastructures create unprecedented opportunities for scientific discovery while posing substantial statistical challenges. In response, my work focuses on developing scalable and efficient statistical methodologies under three interconnected themes: (R.1) efficient distributed learning for large-scale data stored across multiple locations; (R.2) calibrated testing procedures for mediation analysis under complex dependence structures; and (R.3) leveraging black-box predictive models and synthetic data to improve statistical inference. I introduce these themes in details below. %Together, these directions form a coherent agenda aimed at achieving statistical rigor, computational scalability, and scientific interpretability in the era of modern data science.
+
+\renewcommand{\thesubsection}{R.\arabic{subsection}}
+\subsection{Efficient Distributed Learning}
+% I develop distributed statistical methods for large-scale data analysis with applications with a central goal of computational and statistical efficiency. 
+The increasing scalability of data collection means that modern datasets are often too large, too sensitive, or too geographically distributed to be analyzed using classical centralized methods. Multi-institution biomedical collaborations, federated electronic health records, and cloud-based repositories are typical examples where data cannot be directly pooled. These settings demand methods that operate with minimal communication, are robust to heterogeneous partitions, and preserve full-sample statistical efficiency whenever possible.
+
+My work develops distributed algorithms that achieve these goals through:
+
+\begin{itemize}
+  \item Divide-and-conquer estimation with debiasing, allowing one-shot aggregation that recovers the efficiency of centralized estimators \citep{zhang2025DC,Zhu2025ImprovedDC,chen2025DCseq};
+  \item Decentralized optimization algorithms with provable convergence and statistical guarantees in the presence of doubly nonsmooth objectives \citep{chen2024Robust1bit,qiao2024FastRobustLowRanka,qiao2025RobustEfficientSparse,chen2024SparseClassification};
+  \item Centralized distributed learning under heterogeneous data distributions and multi-tasks \citep{chen2022DistributedEstimationHeterogeneous,chen2022DistributedDecodingHeterogeneous,chen2022RobustMultiTask}
+  
+  % \item Influence function–based corrections that remove data-partition bias;
+
+  % \item Communication-efficient inference for generalized linear models, penalized methods, and support vector machines; and
+
+  % \item Topology-aware learning, where communication follows a general network graph rather than a central server.
+\end{itemize}
+
+A key insight in my work is the explicit characterization of the statistical–computational trade-off: how communication constraints, node heterogeneity, or local sample sizes influence the attainable accuracy of distributed estimators. These contributions provide a principled theoretical foundation for scalable learning in decentralized environments and directly benefit applications such as precision medicine, national health networks, and distributed sensing systems.
+
+\subsection{Calibrated Testing in Mediation Analysis}
+% Mediation analysis is an important tool for understanding the mechanisms underlying causal relationships. I develop novel testing procedures for composite null hypotheses in mediation analysis that ensure valid type I error control and high power across various scenarios.
+Understanding how an exposure affects an outcome—rather than merely whether it does—is critical in biomedical, environmental, and social sciences. Mediation analysis addresses this by decomposing the total effect into pathways operating through intermediate variables (mediators). However, modern mediation settings often involve high-dimensional mediators with strong dependence, network structure, or temporal correlation, which violate the assumptions of classical mediation tests.
+
+A central statistical challenge arises from the composite null hypothesis that defines mediation:
+\[
+\alpha_j\beta_j = 0,
+\]
+which corresponds to either no exposure–mediator effect or no mediator–outcome effect. Traditional tests fail to account for this structure, resulting in inflated type I error or severe power loss.
+
+My research develops:
+
+\begin{itemize}
+  \item Calibrated composite-null tests that maintain valid type I error across diverse dependence patterns;
+
+\item Decorrelated screening approaches for large-scale mediator collections;
+
+  \item Dependence-robust multiple testing for pathway detection; and
+
+  \item Streaming mediation inference, allowing real-time pathway updates as new data arrive.
+\end{itemize}
+
+These methods are motivated by applications in genomics, neuroimaging, environmental exposure research, and mobile health, where understanding mechanisms is as important as detecting associations.
+
+\subsection{Leveraging Black-Box and Synthetic Data Algorithms}
+% I evaluate the goodness of black-box models and leverage them to improve inference efficiency.
+Immersive computing capacity—from cloud GPU systems to generative AI—has made the use of black-box predictive models routine in scientific research. However, while such models can capture complex nonlinear patterns, they often lack interpretability and are not immediately suitable for inference. A central question in modern statistics is therefore:
+
+When can black-box predictions or synthetic data be used to improve classical inference without compromising validity?
+
+My research addresses this question using two complementary components.
+
+(a) Evaluating the adequacy of black-box and synthetic data models
+
+I develop methods to test whether a black-box predictor or a synthetic data generator is sufficient for a downstream inferential task. This includes:
+
+\begin{itemize}
+  \item testing whether synthetic samples preserve inferential structure,
+
+\item assessing whether black-box risk scores maintain necessary conditional relationships, and
+
+  \item validating generative models as surrogates for missing or expensive data.
+\end{itemize}
+
+(b) Improving inference via real–synthetic data fusion
+
+Once sufficiency is established, I design procedures that use synthetic samples or black-box predictions to:
+
+\begin{itemize}
+  \item reduce estimator variance,
+
+  \item boost power for detecting weak signals, and
+
+  \item improve inference stability in semi-supervised or partially labeled settings.
+\end{itemize}
+
+This research draws on principles from classical inference, semi-supervised learning, and generative modeling to create a unified framework for inference enhancement using modern computational tools.
+
+
+\subsection{Future Research Directions}
+
+My long-term vision is to establish a unified theory for statistical learning that aligns with modern data infrastructures. Future research directions include:
+
+\begin{itemize}
+  \item Federated and privacy-aware inference, focusing on optimality under strict communication and privacy constraints;
+
+\item Mediation analysis for nonlinear, dynamic, and networked systems, crucial for understanding biological and environmental mechanisms;
+
+\item Statistical foundations of synthetic data augmentation, providing guarantees for real–synthetic data integration; and
+
+\item Unified frameworks that integrate distributed learning, pathway analysis, and synthetic-data-based inference.
+\end{itemize}
+
+These directions will advance the development of statistical methodologies that are computationally feasible, scientifically meaningful, and theoretically rigorous.
+
+ 
+\subsection{Conclusion}
+
+My research is unified by the goal of developing statistical methods that effectively harness the scale, complexity, and computational richness of modern data infrastructures. By advancing distributed learning, mediation pathway analysis, and inference-enhanced machine learning, I aim to contribute broadly to statistical theory, large-scale data science, and interdisciplinary scientific discovery.
+
+\vskip2in
+A Research Statement is a 2–4 page document that describes:
+
+Your research vision and agenda — what scientific problems you are trying to solve and why they matter.
+
+Past accomplishments — key projects, publications, methods, or findings that demonstrate your expertise.
+
+Current work — ongoing studies, grants, collaborations, and data sources.
+
+Future plans — what you plan to do in the next 5–10 years, how your work will evolve, and how it connects to departmental priorities.
+
+Funding and collaboration potential — ideas for external funding (e.g., NIH, NSF) and interdisciplinary connections.
+
+For statistics/biostatistics, you often include:
+
+Methodological contributions (e.g., distributed inference, causal inference, high-dimensional modeling).
+
+Application areas (e.g., genomics, epidemiology, health data science).
+
+Integration with computation (e.g., scalable algorithms).
+
+\fi
+
+% \clearpage
+\vskip1.5cm
+%\bibliographystyle{Chicago}
+
+% \defbibnote{mynote}{\list{}{\leftmargin1em
+% }\item[]$^*$ indicates equal contributions\\ $^\dagger$ indicates corresponding author(s)
+%    (if not the senior author)\\ \textbf{boldface} indicates me \\}
+
+
+% \clearpage
+% \defbibnote{mynote}{\list{}{%\leftmargin-0.001cm
+% }\item[]$^*$ indicates equal contributions\\ $^\dagger$ indicates corresponding author(s)
+%    (if not the senior author)\\ \textbf{boldface} indicates me \\}
+% \defbibnote{mynote}{$^*$ indicates equal contributions;  $^\dagger$ indicates corresponding author(s)
+%    (if not the senior author); \textbf{boldface} indicates me
+%    }
+{\footnotesize
+\printbibliography%[prenote=mynote]%[heading=subbibliography]
+% TODO:END:REFEREE3
+%\fi
+}
+
+
+\end{document}
